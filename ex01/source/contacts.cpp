@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 00:49:28 by bahn              #+#    #+#             */
-/*   Updated: 2022/01/29 01:11:02 by bahn             ###   ########.fr       */
+/*   Updated: 2022/01/29 01:42:49 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,7 @@ void		Contacts::display_field()
 	display_borderLine();
 	for (size_t i = Index; i <= Nickname; i++)
 	{
-		std::cout << "|" \
-		<< field[i] << std::setw(DISPLAY_MAX_WIDTH - field[i].size() + 1);
+		std::cout << "|" << field[i] << std::setw(DISPLAY_MAX_WIDTH - field[i].size() + 1);
 	}
 	std::cout << "|" << std::endl;
 	display_borderLine();
@@ -43,7 +42,7 @@ void		Contacts::display_field()
 
 void		Contacts::display_borderLine()
 {
-	std::cout << std::setw((DISPLAY_MAX_WIDTH + 1) * (Nickname + 1) + 2) << std::setfill('-') << " " << std::endl;
+	std::cout << std::setw((DISPLAY_MAX_WIDTH + 1) * (Nickname + 1) + 1) << std::setfill('-') << "" << std::endl;
 	std::cout << std::setfill(' ');
 }
 
@@ -63,4 +62,9 @@ void	Contacts::get_info() {
 			std::cout << "|" << std::endl;
 	}
 	display_borderLine();
+}
+
+std::size_t	Contacts::get_index() {
+	// informations[Index]
+	return (std::stoi(informations[Index]));
 }

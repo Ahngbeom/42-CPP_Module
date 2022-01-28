@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 22:07:19 by bahn              #+#    #+#             */
-/*   Updated: 2022/01/29 00:58:54 by bahn             ###   ########.fr       */
+/*   Updated: 2022/01/29 01:40:16 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,12 @@ class	Contacts
 	public:
 		Contacts();
 		~Contacts();
-		// void	set_Contacts(std::size_t index);
-		// void	get_Contacts(void);
-		// void	field_display(void);
 		std::string	display_input_field(std::size_t index);
 		void		display_field();
 		void		display_borderLine();
 		void		set_info(std::size_t index, std::string info);
 		void		get_info();
+		std::size_t	get_index();
 };
 
 #endif
