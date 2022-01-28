@@ -6,7 +6,7 @@
 #    By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/26 20:50:55 by bahn              #+#    #+#              #
-#    Updated: 2022/01/27 01:02:25 by bahn             ###   ########.fr        #
+#    Updated: 2022/01/29 00:31:33 by bahn             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,11 +18,11 @@ INCFLAGS = -I./includes
 
 RM = rm -rf
 
-SRCS_DIR = ./
+SRCS_DIR = ./source/
 SRCS_FILE = main.cpp \
+			welcome.cpp \
 			phone_book.cpp \
-			contacts.cpp \
-			welcome.cpp
+			contacts.cpp 
 SRCS = $(addprefix $(SRCS_DIR), $(SRCS_FILE))
 OBJS = $(SRCS:.cpp=.o)
 

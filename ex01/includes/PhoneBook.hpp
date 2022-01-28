@@ -1,42 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phone_book.cpp                                     :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/26 21:24:50 by bahn              #+#    #+#             */
-/*   Updated: 2022/01/27 01:01:26 by bahn             ###   ########.fr       */
+/*   Created: 2022/01/26 21:25:20 by bahn              #+#    #+#             */
+/*   Updated: 2022/01/29 00:58:58 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phone_book.hpp"
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
-PhoneBook::PhoneBook()
+# include "Contacts.hpp"
+
+# define MAX		8
+
+class	PhoneBook
 {
-	this->index = 0;
-}
+private:
+	Contacts		contacts[MAX];
+	std::size_t		capacity;
 
-void	PhoneBook::add_Contacts(void)
-{
-	if (this->index < MAX)
-	{
-		this->member[this->index].set_Contacts();
-		this->index++;
-	}
-	else
-	{
-		std::cout << "FULL !\n";
-	}
-}
+public:
+	PhoneBook();
+	~PhoneBook();
+	void	add_Contacts(void);
+	void	search_Contacts(void);
+};
 
-void	PhoneBook::search_Contacts(void)
-{
-	int	index;
+void	welcome(void);
 
-	index = -1;
-	while (++index < this->index)
-	{
-		this->member[index].get_Contacts();
-	}
-}
+#endif

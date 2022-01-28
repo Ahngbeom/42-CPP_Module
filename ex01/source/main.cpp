@@ -6,33 +6,31 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 00:50:19 by bahn              #+#    #+#             */
-/*   Updated: 2022/01/27 01:21:27 by bahn             ###   ########.fr       */
+/*   Updated: 2022/01/28 22:21:15 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phone_book.hpp"
+#include "PhoneBook.hpp"
 
 int main(void)
 {
-	PhoneBook	phone_book;
+	PhoneBook	pb;
 	std::string command;
 
 	welcome();
 	while (1)
 	{
-		std::cout << ">";
+		// std::cout << "Available Commands : ADD, SEARCH, EXIT\n";
+		std::cout << "> ";
 		std::getline(std::cin, command);
 		if (command == "EXIT" || command == "exit")
 			break ;
 		else if (command == "ADD" || command == "add")
-		{
-			phone_book.add_Contacts();
-		}
+			pb.add_Contacts();
 		else if (command == "SEARCH" || command == "search")
-		{
-			phone_book.search_Contacts();
-		}
-		// command.clear();
+			pb.search_Contacts();
+		else
+			std::cout << "WARNING : Invalid Commands." << std::endl;
 	}
 	std::cout << "See you again ~ " << std::endl;
 	return (0);
