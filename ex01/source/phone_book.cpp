@@ -6,19 +6,20 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 21:24:50 by bahn              #+#    #+#             */
-/*   Updated: 2022/01/29 02:24:39 by bahn             ###   ########.fr       */
+/*   Updated: 2022/01/29 02:52:41 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook() : capacity() {
-	
+	std::cout << "\e[1;100m                                        \e[0m" << std::endl;
+	std::cout << "\e[1;100m         \e[0m \e[33mWelcome to\e[0m\e[0m \e[32;1;5mPhone Book\e[0m \e[1;100m        \e[0m" << std::endl;
+	std::cout << "\e[1;100m                                        \e[0m" << std::endl;
 }
 
 PhoneBook::~PhoneBook() {
-	// Delete PhoneBook ?
-	std::cout << "PhoneBook Destructing" << std::endl;
+	std::cout << "See you again ~ " << std::endl;
 }
 
 std::size_t	PhoneBook::get_nextIndex() {
@@ -93,8 +94,15 @@ void	PhoneBook::search_index(std::size_t index) {
 	{
 		if (contacts[i].get_index() == index)
 		{
-			contacts[i].display_field();
-			contacts[i].get_info();
+			// contacts[i].display_field();
+			// contacts[i].get_info();
+			
+			for (size_t j = Index; j < DarkestSecret; j++)
+			{
+				std::cout << std::endl;
+				std::cout << contacts[i].display_input_field(j) << contacts[i].get_info(j) << std::endl;
+				std::cout << std::endl;
+			}
 			return ;
 		}
 	}

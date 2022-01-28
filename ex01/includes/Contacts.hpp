@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 22:07:19 by bahn              #+#    #+#             */
-/*   Updated: 2022/01/29 01:40:16 by bahn             ###   ########.fr       */
+/*   Updated: 2022/01/29 02:50:16 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ class	Contacts
 		void		display_borderLine();
 		void		set_info(std::size_t index, std::string info);
 		void		get_info();
+		std::string	get_info(std::size_t index);
 		std::size_t	get_index();
 };
 

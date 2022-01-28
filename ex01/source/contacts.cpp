@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 00:49:28 by bahn              #+#    #+#             */
-/*   Updated: 2022/01/29 01:42:49 by bahn             ###   ########.fr       */
+/*   Updated: 2022/01/29 02:50:51 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,13 @@ std::string	Contacts::display_input_field(std::size_t index) {
 void		Contacts::display_field()
 {
 	display_borderLine();
+	std::cout << "|";
 	for (size_t i = Index; i <= Nickname; i++)
 	{
-		std::cout << "|" << field[i] << std::setw(DISPLAY_MAX_WIDTH - field[i].size() + 1);
+		std::cout << std::setw(DISPLAY_MAX_WIDTH) << std::left << field[i];
+		std::cout << "|";
 	}
-	std::cout << "|" << std::endl;
+	std::cout << std::endl;
 	display_borderLine();
 }
 
@@ -64,7 +66,10 @@ void	Contacts::get_info() {
 	display_borderLine();
 }
 
+std::string	Contacts::get_info(std::size_t index) {
+	return (informations[index]);
+}
+
 std::size_t	Contacts::get_index() {
-	// informations[Index]
 	return (std::stoi(informations[Index]));
 }

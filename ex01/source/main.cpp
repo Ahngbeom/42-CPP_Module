@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 00:50:19 by bahn              #+#    #+#             */
-/*   Updated: 2022/01/29 01:59:28 by bahn             ###   ########.fr       */
+/*   Updated: 2022/01/29 02:30:15 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main(void)
 	PhoneBook	pb;
 	std::string command;
 
-	welcome();
+	// welcome();
 	while (1)
 	{
 		std::cout << "[Available Commands : ADD, SEARCH, EXIT]" << std::endl;
@@ -32,6 +32,5 @@ int main(void)
 		else
 			std::cout << "WARNING : Invalid Commands." << std::endl;
 	}
-	std::cout << "See you again ~ " << std::endl;
 	return (0);
 }
