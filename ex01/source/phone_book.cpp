@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 21:24:50 by bahn              #+#    #+#             */
-/*   Updated: 2022/01/29 01:45:31 by bahn             ###   ########.fr       */
+/*   Updated: 2022/01/29 02:24:39 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,11 @@ PhoneBook::~PhoneBook() {
 	std::cout << "PhoneBook Destructing" << std::endl;
 }
 
-void	PhoneBook::add_Contacts(void)
+std::size_t	PhoneBook::get_nextIndex() {
+	return (contacts[MAX - 1].get_index() + 1);
+}
+
+void	PhoneBook::add_contacts(void)
 {
 	std::string	input;
 	std::size_t	i;
@@ -54,15 +58,45 @@ void	PhoneBook::add_Contacts(void)
 	}
 }
 
-void	PhoneBook::search_Contacts(void)
+void	PhoneBook::search_contacts(void)
 {
+	std::string	command;
+	std::size_t	index;
+
 	contacts[capacity].display_field();
 	for (size_t i = 0; i < capacity; i++)
 	{
 		contacts[i].get_info();
 	}
+	while (1)
+	{
+		std::cout << "[Enter the index you want to see in detail (Escape : EXIT)]" << std::endl;
+		std::cout << "> ";
+		std::getline(std::cin, command);
+		if (!command.compare("EXIT") || !command.compare("exit"))
+			break ;
+		try
+		{
+			index = std::stoi(command);
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << " Error : Convert Failed" << std::endl;
+			continue ;
+		}
+		search_index(index);
+	}
 }
 
-std::size_t	PhoneBook::get_nextIndex() {
-	return (contacts[MAX - 1].get_index() + 1);
+void	PhoneBook::search_index(std::size_t index) {
+	for (size_t i = 0; i < capacity; i++)
+	{
+		if (contacts[i].get_index() == index)
+		{
+			contacts[i].display_field();
+			contacts[i].get_info();
+			return ;
+		}
+	}
+	std::cout << "Not Found." << std::endl;
 }

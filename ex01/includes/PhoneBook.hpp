@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 21:25:20 by bahn              #+#    #+#             */
-/*   Updated: 2022/01/29 01:39:01 by bahn             ###   ########.fr       */
+/*   Updated: 2022/01/29 02:15:10 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,10 @@ private:
 public:
 	PhoneBook();
 	~PhoneBook();
-	void	add_Contacts(void);
-	void	search_Contacts(void);
 	std::size_t	get_nextIndex();
+	void		add_contacts(void);
+	void		search_contacts(void);
+	void		search_index(std::size_t index);
 };
 
 void	welcome(void);
