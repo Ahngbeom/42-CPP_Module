@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 00:49:28 by bahn              #+#    #+#             */
-/*   Updated: 2022/01/29 02:50:51 by bahn             ###   ########.fr       */
+/*   Updated: 2022/01/29 23:27:02 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ std::string	Contacts::field[6] = {
 	"First Name",
 	"Last Name",
 	"Nickname",
-	"Phone Numb",
-	"Darkest Sec"
+	"Phone Number",
+	"Darkest Secret"
 };
 
 std::string	Contacts::display_input_field(std::size_t index) {
