@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/30 19:00:37 by bahn              #+#    #+#             */
-/*   Updated: 2022/01/31 00:28:22 by bahn             ###   ########.fr       */
+/*   Created: 2022/01/30 19:04:46 by bahn              #+#    #+#             */
+/*   Updated: 2022/01/31 00:42:29 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#pragma	once
+#ifndef	ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-int main(void)
+# include <iostream>
+# include <string>
+
+class Zombie
 {
-	Zombie	zb_1(std::string("Police Officer"));
-	Zombie	zb_2(std::string("Aide"));
-	Zombie	*zb_3 = newZombie("Congressman");
-	
-	zb_1.announce();
-	zb_2.announce();
-	zb_3->announce();
-	randomChump("⭐President⭐");
-	zb_3->~Zombie();
-	return 0;
-}
+private:
+	std::string	_name;
+public:
+	Zombie();
+	Zombie( std::string name );
+	~Zombie();
+	void	announce( void );
+};
+
+Zombie* zombieHorde( int N, std::string name );
+
+#endif

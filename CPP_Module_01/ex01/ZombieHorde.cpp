@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/30 19:00:37 by bahn              #+#    #+#             */
-/*   Updated: 2022/01/31 00:28:22 by bahn             ###   ########.fr       */
+/*   Created: 2022/01/30 21:43:05 by bahn              #+#    #+#             */
+/*   Updated: 2022/01/31 00:51:11 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int main(void)
-{
-	Zombie	zb_1(std::string("Police Officer"));
-	Zombie	zb_2(std::string("Aide"));
-	Zombie	*zb_3 = newZombie("Congressman");
-	
-	zb_1.announce();
-	zb_2.announce();
-	zb_3->announce();
-	randomChump("⭐President⭐");
-	zb_3->~Zombie();
-	return 0;
+Zombie* zombieHorde( int N, std::string name ) {
+	if (N <= 0)
+		return (NULL);
+	Zombie	*horde = new Zombie[N];
+	for (int i = 0; i < N; i++)
+	{
+		horde[i] = Zombie(name + std::to_string(i + 1));
+	}
+	return (horde);
 }

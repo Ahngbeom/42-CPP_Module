@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 19:04:46 by bahn              #+#    #+#             */
-/*   Updated: 2022/01/31 00:06:14 by bahn             ###   ########.fr       */
+/*   Updated: 2022/01/31 00:28:28 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ class Zombie
 {
 private:
 	std::string	_name;
-	// std::string	_announce;
 public:
 	Zombie();
 	Zombie( std::string name );

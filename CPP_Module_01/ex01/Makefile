@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/01/31 00:10:28 by bahn              #+#    #+#              #
-#    Updated: 2022/01/31 00:10:31 by bahn             ###   ########.fr        #
+#    Created: 2022/01/30 18:50:12 by bahn              #+#    #+#              #
+#    Updated: 2022/01/31 00:43:35 by bahn             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,7 @@ RM = rm -rf
 SRCS_DIR = ./
 SRCS_FILE = main.cpp \
 			Zombie.cpp \
-			newZombie.cpp \
-			randomChump.cpp
+			ZombieHorde.cpp
 SRCS = $(addprefix $(SRCS_DIR), $(SRCS_FILE))
 OBJS = $(SRCS:.cpp=.o)
 
