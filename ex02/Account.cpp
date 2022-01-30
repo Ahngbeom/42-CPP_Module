@@ -6,12 +6,13 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 22:05:44 by bahn              #+#    #+#             */
-/*   Updated: 2022/01/30 17:57:05 by bahn             ###   ########.fr       */
+/*   Updated: 2022/01/30 18:23:47 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
 #include <iostream>
+#include <iomanip>
 #include <ctime>
 
 int	Account::_nbAccounts = 0;
@@ -38,6 +39,7 @@ Account::Account( void ) {
 
 
 Account::~Account( void ) {
+	_displayTimestamp();
 	std::cout << "index:" << _accountIndex << ";";
 	std::cout << "amount:" << _amount << ";";
 	std::cout << "closed" << std::endl;
@@ -104,7 +106,7 @@ bool	Account::makeWithdrawal( int withdrawal ) {
 }
 
 int		Account::checkAmount( void ) const {
-	return (0);
+	return (Account::_amount);
 }
 
 void	Account::displayStatus( void ) const {
@@ -123,6 +125,7 @@ void	Account::_displayTimestamp( void ) {
 	time_format = localtime(&curr_time);
 	std::cout << "[";
 	std::cout << time_format->tm_year + 1900;
+	std::cout << std::setw(2) << std::setfill('0');
 	std::cout << time_format->tm_mon + 1;
 	std::cout << time_format->tm_mday;
 	std::cout << "_";
@@ -130,4 +133,5 @@ void	Account::_displayTimestamp( void ) {
 	std::cout << time_format->tm_min;
 	std::cout << time_format->tm_sec;
 	std::cout << "] ";
+	std::cout << std::setw(0) << std::setfill('\0');
 }
