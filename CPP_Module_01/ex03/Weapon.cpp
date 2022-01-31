@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/26 21:25:20 by bahn              #+#    #+#             */
-/*   Updated: 2022/01/31 21:40:41 by bahn             ###   ########.fr       */
+/*   Created: 2022/01/31 01:24:45 by bahn              #+#    #+#             */
+/*   Updated: 2022/01/31 02:20:31 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#include "Weapon.hpp"
 
-# include "Contacts.hpp"
-
-# define MAX		8
-
-class	PhoneBook
+Weapon::Weapon()
 {
-private:
-	Contact			contact[MAX];
-	std::size_t		capacity;
+}
 
-public:
-	PhoneBook();
-	~PhoneBook();
-	std::size_t	get_nextIndex();
-	void		add_contacts(void);
-	void		search_contacts(void);
-	void		search_index(std::size_t index);
-};
+Weapon::Weapon( const std::string& type )
+{
+	_type = type;
+}
 
-#endif
+Weapon::~Weapon()
+{
+}
+
+void	Weapon::setType( const std::string& type ) {
+	_type = type;
+}
+const	std::string&	Weapon::getType( void ) const {
+	return (_type);
+}

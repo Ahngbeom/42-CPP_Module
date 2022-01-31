@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/26 21:25:20 by bahn              #+#    #+#             */
-/*   Updated: 2022/01/31 21:40:41 by bahn             ###   ########.fr       */
+/*   Created: 2022/01/31 01:54:26 by bahn              #+#    #+#             */
+/*   Updated: 2022/01/31 20:31:02 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#include "HumanA.hpp"
 
-# include "Contacts.hpp"
-
-# define MAX		8
-
-class	PhoneBook
+HumanA::HumanA( std::string name, Weapon& weapon) : _weapon(weapon), _name(name)
 {
-private:
-	Contact			contact[MAX];
-	std::size_t		capacity;
+}
 
-public:
-	PhoneBook();
-	~PhoneBook();
-	std::size_t	get_nextIndex();
-	void		add_contacts(void);
-	void		search_contacts(void);
-	void		search_index(std::size_t index);
-};
+HumanA::~HumanA()
+{
+}
 
-#endif
+void	HumanA::attack( void ) {
+	std::cout << _name << " attacks with his " << _weapon.getType() << std::endl;
+}

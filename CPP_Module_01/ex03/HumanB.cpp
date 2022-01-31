@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/26 21:25:20 by bahn              #+#    #+#             */
-/*   Updated: 2022/01/31 21:40:41 by bahn             ###   ########.fr       */
+/*   Created: 2022/01/31 01:55:43 by bahn              #+#    #+#             */
+/*   Updated: 2022/01/31 02:26:41 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#include "HumanB.hpp"
 
-# include "Contacts.hpp"
-
-# define MAX		8
-
-class	PhoneBook
+HumanB::HumanB()
 {
-private:
-	Contact			contact[MAX];
-	std::size_t		capacity;
+}
 
-public:
-	PhoneBook();
-	~PhoneBook();
-	std::size_t	get_nextIndex();
-	void		add_contacts(void);
-	void		search_contacts(void);
-	void		search_index(std::size_t index);
-};
+HumanB::HumanB( std::string name )
+{
+	_name = name;
+}
 
-#endif
+HumanB::~HumanB()
+{
+}
+
+void	HumanB::setWeapon( Weapon& weapon ) {
+	_weapon = &weapon;
+}
+
+void	HumanB::attack( void ) {
+	std::cout << _name << " attacks with his " << _weapon->getType() << std::endl;
+}

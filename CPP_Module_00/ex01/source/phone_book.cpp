@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 21:24:50 by bahn              #+#    #+#             */
-/*   Updated: 2022/01/29 23:24:05 by bahn             ###   ########.fr       */
+/*   Updated: 2022/01/31 21:41:59 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ PhoneBook::~PhoneBook() {
 }
 
 std::size_t	PhoneBook::get_nextIndex() {
-	return (contacts[MAX - 1].get_index() + 1);
+	return (contact[MAX - 1].get_index() + 1);
 }
 
 void	PhoneBook::add_contacts(void)
@@ -33,28 +33,28 @@ void	PhoneBook::add_contacts(void)
 
 	if (capacity < MAX)
 	{
-		contacts[capacity].set_info(Index, std::to_string(capacity + 1));
+		contact[capacity].set_info(Index, std::to_string(capacity + 1));
 		for (size_t i = FirstName; i <= DarkestSecret; i++)
 		{
-			std::cout << contacts[capacity].display_input_field(i);
+			std::cout << contact[capacity].display_input_field(i);
 			std::getline(std::cin, input);
-			contacts[capacity].set_info(i, input);
+			contact[capacity].set_info(i, input);
 		}
 		capacity++;
 	}
 	else
 	{
-		contacts[0].~Contacts();
+		contact[0].~Contact();
 		for (i = 0; i < MAX - 1; i++)
 		{
-			contacts[i] = contacts[i + 1];
+			contact[i] = contact[i + 1];
 		}
-		contacts[i].set_info(Index, std::to_string(get_nextIndex()));
+		contact[i].set_info(Index, std::to_string(get_nextIndex()));
 		for (size_t j = FirstName; j <= DarkestSecret; j++)
 		{
-			std::cout << contacts[i].display_input_field(j);
+			std::cout << contact[i].display_input_field(j);
 			std::getline(std::cin, input);
-			contacts[i].set_info(j, input);
+			contact[i].set_info(j, input);
 		}
 	}
 }
@@ -64,10 +64,15 @@ void	PhoneBook::search_contacts(void)
 	std::string	command;
 	std::size_t	index;
 
-	contacts[capacity].display_field();
+	contact[capacity].display_field();
+	if (capacity == 0)
+	{
+		std::cout << "*** Contact is empty. ***" << std::endl;
+		return ;
+	}
 	for (size_t i = 0; i < capacity; i++)
 	{
-		contacts[i].get_info();
+		contact[i].get_info();
 	}
 	while (1)
 	{
@@ -92,12 +97,12 @@ void	PhoneBook::search_contacts(void)
 void	PhoneBook::search_index(std::size_t index) {
 	for (size_t i = 0; i < capacity; i++)
 	{
-		if (contacts[i].get_index() == index)
+		if (contact[i].get_index() == index)
 		{
 			std::cout << std::endl;
 			for (size_t j = Index; j <= DarkestSecret; j++)
 			{
-				std::cout << contacts[i].display_input_field(j) << contacts[i].get_info(j) << std::endl;
+				std::cout << contact[i].display_input_field(j) << contact[i].get_info(j) << std::endl;
 			}
 			std::cout << std::endl;
 			return ;

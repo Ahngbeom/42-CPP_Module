@@ -6,17 +6,17 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 00:49:28 by bahn              #+#    #+#             */
-/*   Updated: 2022/01/29 23:27:02 by bahn             ###   ########.fr       */
+/*   Updated: 2022/01/31 21:40:11 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contacts.hpp"
 
-Contacts::Contacts() {}
+Contact::Contact() {}
 
-Contacts::~Contacts() {}
+Contact::~Contact() {}
 
-std::string	Contacts::field[6] = {
+std::string	Contact::field[6] = {
 	"Index",
 	"First Name",
 	"Last Name",
@@ -25,11 +25,11 @@ std::string	Contacts::field[6] = {
 	"Darkest Secret"
 };
 
-std::string	Contacts::display_input_field(std::size_t index) {
+std::string	Contact::display_input_field(std::size_t index) {
 	return (field[index] + " : ");
 }
 
-void		Contacts::display_field()
+void		Contact::display_field()
 {
 	display_borderLine();
 	std::cout << "|";
@@ -42,18 +42,18 @@ void		Contacts::display_field()
 	display_borderLine();
 }
 
-void		Contacts::display_borderLine()
+void		Contact::display_borderLine()
 {
 	std::cout << std::setw((DISPLAY_MAX_WIDTH + 1) * (Nickname + 1) + 1) << std::setfill('-') << "" << std::endl;
 	std::cout << std::setfill(' ');
 }
 
-void	Contacts::set_info(size_t index, std::string info)
+void	Contact::set_info(size_t index, std::string info)
 {
 	informations[index] = info;
 }
 
-void	Contacts::get_info() {
+void	Contact::get_info() {
 	for (size_t i = Index; i <= Nickname; i++)
 	{
 		if (informations[i].size() >= DISPLAY_MAX_WIDTH)
@@ -66,10 +66,10 @@ void	Contacts::get_info() {
 	display_borderLine();
 }
 
-std::string	Contacts::get_info(std::size_t index) {
+std::string	Contact::get_info(std::size_t index) {
 	return (informations[index]);
 }
 
-std::size_t	Contacts::get_index() {
+std::size_t	Contact::get_index() {
 	return (std::stoi(informations[Index]));
 }
