@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 22:05:44 by bahn              #+#    #+#             */
-/*   Updated: 2022/01/30 18:23:47 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/01 19:42:43 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ Account::Account(int initial_deposit ) {
 Account::Account( void ) {
 
 };
-
 
 Account::~Account( void ) {
 	_displayTimestamp();
@@ -125,13 +124,11 @@ void	Account::_displayTimestamp( void ) {
 	time_format = localtime(&curr_time);
 	std::cout << "[";
 	std::cout << time_format->tm_year + 1900;
-	std::cout << std::setw(2) << std::setfill('0');
-	std::cout << time_format->tm_mon + 1;
-	std::cout << time_format->tm_mday;
+	std::cout << std::setw(2) << std::setfill('0') << time_format->tm_mon + 1;
+	std::cout << std::setw(2) << std::setfill('0') << time_format->tm_mday;
 	std::cout << "_";
-	std::cout << time_format->tm_hour;
-	std::cout << time_format->tm_min;
-	std::cout << time_format->tm_sec;
+	std::cout << std::setw(2) << std::setfill('0') << time_format->tm_hour;
+	std::cout << std::setw(2) << std::setfill('0') << time_format->tm_min;
+	std::cout << std::setw(2) << std::setfill('0') << time_format->tm_sec;
 	std::cout << "] ";
-	std::cout << std::setw(0) << std::setfill('\0');
 }
