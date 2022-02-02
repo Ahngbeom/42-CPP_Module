@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 22:05:44 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/01 19:42:43 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/02 15:06:35 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,9 @@ void	Account::makeDeposit( int deposit ) {
 	std::cout << "deposits:" << deposit << ";";
 	_amount += deposit;
 	_totalAmount += deposit;
+	std::cout << "amount:" << _amount << ";";
 	_nbDeposits++;
 	_totalNbDeposits++;
-	std::cout << "amount:" << _amount << ";";
 	std::cout << "nb_deposits:" << _nbDeposits << std::endl;
 }
 
@@ -91,9 +91,9 @@ bool	Account::makeWithdrawal( int withdrawal ) {
 		std::cout << withdrawal << ";";
 		_amount -= withdrawal;
 		_totalAmount -= withdrawal;
+		std::cout << "amount:" << _amount << ";";
 		_nbWithdrawals++;
 		_totalNbWithdrawals++;
-		std::cout << "amount:" << _amount << ";";
 		std::cout << "nb_deposits:" << _nbDeposits << std::endl;
 		return (true);
 	}

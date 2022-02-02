@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 19:00:37 by bahn              #+#    #+#             */
-/*   Updated: 2022/01/31 00:28:22 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/02 20:02:25 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ int main(void)
 	zb_2.announce();
 	zb_3->announce();
 	randomChump("⭐President⭐");
-	zb_3->~Zombie();
+	delete zb_3;
 	return 0;
 }

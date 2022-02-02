@@ -6,14 +6,14 @@
 #    By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/30 18:50:12 by bahn              #+#    #+#              #
-#    Updated: 2022/01/30 22:00:14 by bahn             ###   ########.fr        #
+#    Updated: 2022/02/02 15:46:16 by bahn             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Zombie
 
 CC = clang++
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 INCFLAGS = -I.
 
 RM = rm -rf

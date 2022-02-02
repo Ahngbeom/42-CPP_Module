@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 19:00:37 by bahn              #+#    #+#             */
-/*   Updated: 2022/01/31 00:50:27 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/02 20:41:14 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,14 @@
 int main(void)
 {
 	Zombie*	zb_horde = zombieHorde(N, "Soldier");
-
-	for (size_t i = 0; i < N; i++)
+	
+	if (zb_horde != NULL)
 	{
-		zb_horde[i].announce();
+		for (size_t i = 0; i < N; i++)
+		{
+			zb_horde[i].announce();
+		}
+		delete [] zb_horde;
 	}
-
-	for (size_t i = 0; i < N; i++)
-	{
-		zb_horde[i].~Zombie();
-	}
-	return 0;
-}
+	return (0);
+} 
