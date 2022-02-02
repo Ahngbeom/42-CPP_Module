@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 01:05:24 by bahn              #+#    #+#             */
-/*   Updated: 2022/01/31 01:16:23 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/02 23:17:55 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ int main( void )
 
 	std::cout << *stringPTR << std::endl;
 	std::cout << stringREF << std::endl;
-	return 0;
+	return (0);
 }

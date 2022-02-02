@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 01:24:10 by bahn              #+#    #+#             */
-/*   Updated: 2022/01/31 20:44:28 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/02 23:54:33 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int main()
 		HumanA bob("Bob", club);
 		bob.attack();
 		club.setType("some other type of club");
-		bob.attack();  	}
+		bob.attack();
+	}
 	{
 		Weapon club = Weapon("crude spiked club");
 		HumanB jim("Jim");

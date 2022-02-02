@@ -6,23 +6,16 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 01:55:43 by bahn              #+#    #+#             */
-/*   Updated: 2022/01/31 02:26:41 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/03 01:12:09 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-HumanB::HumanB()
-{
+HumanB::HumanB( std::string name ) : _name(name) {
 }
 
-HumanB::HumanB( std::string name )
-{
-	_name = name;
-}
-
-HumanB::~HumanB()
-{
+HumanB::~HumanB() {
 }
 
 void	HumanB::setWeapon( Weapon& weapon ) {

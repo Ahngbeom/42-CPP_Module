@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 21:24:53 by bahn              #+#    #+#             */
-/*   Updated: 2022/01/31 21:00:06 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/03 02:13:41 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,11 @@ static void	str_upper(const char *str)
 
 	i = -1;
 	while (str[++i] != '\0')
-	{
-		std::cout << (char)toupper(str[i]);
+	{	
+		if (isalpha(str[i]) && islower(str[i]))
+			std::cout << (char)toupper(str[i]);
+		else
+			std::cout << str[i];
 	}
 }
 
@@ -39,6 +42,7 @@ int main(int argc, char const *argv[])
 	while (argv[++i] != NULL)
 	{
 		str_upper(argv[i]);
+		std::cout << " ";
 	}
 	std::cout << std::endl;
 	return 0;

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phone_book.cpp                                     :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 21:24:50 by bahn              #+#    #+#             */
-/*   Updated: 2022/01/31 21:41:59 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/03 02:18:44 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,8 @@ void	PhoneBook::search_contacts(void)
 		std::getline(std::cin, command);
 		if (!command.compare("EXIT") || !command.compare("exit"))
 			break ;
+		else if (command.empty() == true)
+			continue ;
 		try
 		{
 			index = std::stoi(command);

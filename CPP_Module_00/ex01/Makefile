@@ -6,7 +6,7 @@
 #    By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/26 20:50:55 by bahn              #+#    #+#              #
-#    Updated: 2022/01/31 21:40:22 by bahn             ###   ########.fr        #
+#    Updated: 2022/02/03 01:36:41 by bahn             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,14 +14,14 @@ NAME = PhoneBook
 
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror
-INCFLAGS = -I./includes
+INCFLAGS = -I.
 
 RM = rm -rf
 
-SRCS_DIR = ./source/
+SRCS_DIR = ./
 SRCS_FILE = main.cpp \
-			phone_book.cpp \
-			contact.cpp 
+			PhoneBook.cpp \
+			Contact.cpp 
 SRCS = $(addprefix $(SRCS_DIR), $(SRCS_FILE))
 OBJS = $(SRCS:.cpp=.o)
 

@@ -6,14 +6,14 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 21:25:20 by bahn              #+#    #+#             */
-/*   Updated: 2022/01/31 21:40:41 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/03 01:36:07 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
-# include "Contacts.hpp"
+# include "Contact.hpp"
 
 # define MAX		8
 
