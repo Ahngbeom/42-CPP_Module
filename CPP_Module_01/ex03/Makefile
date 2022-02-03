@@ -6,14 +6,14 @@
 #    By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/31 01:04:28 by bahn              #+#    #+#              #
-#    Updated: 2022/01/31 02:05:55 by bahn             ###   ########.fr        #
+#    Updated: 2022/02/04 02:09:00 by bahn             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Unnecessary_violence
 
-CC = clang++
-CFLAGS = -Wall -Wextra -Werror
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 INCFLAGS = -I.
 
 RM = rm -rf
@@ -27,18 +27,18 @@ SRCS = $(addprefix $(SRCS_DIR), $(SRCS_FILE))
 OBJS = $(SRCS:.cpp=.o)
 
 all : $(NAME)
-	@ echo 1> /dev/null
+
 .cpp.o :
-	@ $(CC) $(CFLAGS) $(INCFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) $(INCFLAGS) -c $< -o $@
 
 $(NAME) : $(OBJS)
-	@ $(CC) $(CFLAGS) $(INCFLAGS) $^ -o $@
+	$(CXX) $(CXXFLAGS) $(INCFLAGS) $^ -o $@
 
 clean : 
-	-@ $(RM) $(OBJS)
+	$(RM) $(OBJS)
 
 fclean : clean
-	-@ $(RM) $(NAME)
+	$(RM) $(NAME)
 
 re : fclean all
 
