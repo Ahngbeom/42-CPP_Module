@@ -6,15 +6,11 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 00:49:28 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/03 01:35:44 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/03 16:45:25 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
-
-Contact::Contact() {}
-
-Contact::~Contact() {}
 
 std::string	Contact::field[6] = {
 	"Index",
@@ -24,6 +20,10 @@ std::string	Contact::field[6] = {
 	"Phone Number",
 	"Darkest Secret"
 };
+
+Contact::Contact() {}
+
+Contact::~Contact() {}
 
 std::string	Contact::display_input_field(std::size_t index) {
 	return (field[index] + " : ");
