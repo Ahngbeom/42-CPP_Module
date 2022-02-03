@@ -6,14 +6,14 @@
 #    By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/29 19:51:20 by bahn              #+#    #+#              #
-#    Updated: 2022/01/29 23:50:16 by bahn             ###   ########.fr        #
+#    Updated: 2022/02/04 00:09:20 by bahn             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Account
 
-CC = clang++
-CFLAGS = -Wall -Wextra -Werror
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 INCFLAGS = -I.
 
 RM = rm -rf
@@ -25,18 +25,18 @@ SRCS = $(addprefix $(SRCS_DIR), $(SRCS_FILE))
 OBJS = $(SRCS:.cpp=.o)
 
 all : $(NAME)
-	@ echo 1> /dev/null
+
 .cpp.o :
-	@ $(CC) $(CFLAGS) $(INCFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) $(INCFLAGS) -c $< -o $@
 
 $(NAME) : $(OBJS)
-	@ $(CC) $(CFLAGS) $(INCFLAGS) $^ -o $@
+	$(CXX) $(CXXFLAGS) $(INCFLAGS) $^ -o $@
 
 clean : 
-	-@ $(RM) $(OBJS)
+	$(RM) $(OBJS)
 
 fclean : clean
-	-@ $(RM) $(NAME)
+	$(RM) $(NAME)
 
 re : fclean all
 
