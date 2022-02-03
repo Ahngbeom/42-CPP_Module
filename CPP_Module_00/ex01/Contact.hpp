@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 22:07:19 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/03 01:35:25 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/04 01:16:56 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ class	Contact
 {
 	private:
 		static	std::string	field[6];
-		std::string			informations[6];
+		std::size_t			id;
+		std::string			informations[5];
 		
 	public:
 		Contact();
@@ -41,10 +42,11 @@ class	Contact
 		std::string	display_input_field(std::size_t index);
 		void		display_field();
 		void		display_borderLine();
+		void		set_id(std::size_t index);
 		void		set_info(std::size_t index, std::string info);
+		std::size_t	get_id();
 		void		get_info();
 		std::string	get_info(std::size_t index);
-		std::size_t	get_index();
 };
 
 #endif

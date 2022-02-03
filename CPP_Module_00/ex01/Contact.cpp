@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 00:49:28 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/03 16:45:25 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/04 01:50:56 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,18 +48,30 @@ void		Contact::display_borderLine()
 	std::cout << std::setfill(' ');
 }
 
+void	Contact::set_id(std::size_t index)
+{
+	id = index;
+}
+
+
 void	Contact::set_info(size_t index, std::string info)
 {
 	informations[index] = info;
 }
 
+std::size_t	Contact::get_id() {
+	return (id);
+}
+
 void	Contact::get_info() {
-	for (size_t i = Index; i <= Nickname; i++)
+	
+	std::cout << "|" << std::left << std::setw(DISPLAY_MAX_WIDTH) << get_id();
+	for (size_t i = FirstName; i <= Nickname; i++)
 	{
 		if (informations[i].size() >= DISPLAY_MAX_WIDTH)
-			std::cout << "|" << std::left << std::setw(DISPLAY_MAX_WIDTH) << informations[i].substr(0, 10).replace(10, 1, ".");
+			std::cout << "|" << std::left << std::setw(DISPLAY_MAX_WIDTH) << informations[i - 1].substr(0, 10).replace(10, 1, ".");
 		else
-			std::cout << "|" << std::left << std::setw(DISPLAY_MAX_WIDTH) << informations[i];
+			std::cout << "|" << std::left << std::setw(DISPLAY_MAX_WIDTH) << informations[i - 1];
 		if (i == Nickname)
 			std::cout << "|" << std::endl;
 	}
@@ -68,8 +80,4 @@ void	Contact::get_info() {
 
 std::string	Contact::get_info(std::size_t index) {
 	return (informations[index]);
-}
-
-std::size_t	Contact::get_index() {
-	return (std::stoi(informations[Index]));
 }
