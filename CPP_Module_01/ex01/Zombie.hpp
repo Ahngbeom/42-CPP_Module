@@ -6,11 +6,10 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 19:04:46 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/04 16:01:06 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/04 16:21:09 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma	once
 #ifndef	ZOMBIE_HPP
 # define ZOMBIE_HPP
 
