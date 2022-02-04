@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 19:00:37 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/02 20:02:25 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/04 12:46:05 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 int main(void)
 {
+	Zombie	zb_0;
 	Zombie	zb_1(std::string("Police Officer"));
 	Zombie	zb_2(std::string("Aide"));
 	Zombie	*zb_3 = newZombie("Congressman");
 	
+	zb_0.announce();
 	zb_1.announce();
 	zb_2.announce();
 	zb_3->announce();
