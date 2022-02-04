@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 19:00:37 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/04 15:24:28 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/05 00:12:46 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main(int argc, char const *argv[])
 {
 	if (argc != 3) {
-		std::cout << "Please enter a arguments" << std::endl;
+		std::cout << "Enter the arguments in the correct format." << std::endl;
 		std::cout << "Usage: ./ZombieHorde [ NAME ] [ HEAD COUNT ]" << std::endl;
 	}
 	else {
