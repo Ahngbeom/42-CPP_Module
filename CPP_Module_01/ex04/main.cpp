@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 22:36:56 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/05 00:12:35 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/05 00:45:45 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,27 +27,29 @@ int main(int argc, char const *argv[])
 		std::cout << "./replace [FILE NAME] [FIND STRING] [REPLACE STRING]" << std::endl;
 	}
 	else {
-		std::ifstream input_fstrc;
-		input_fstrc.open(argv[1]);
+		std::ifstream input_fstrm;
+		input_fstrm.open(argv[1]);
 		
-		std::ofstream output_fstrc;
-		output_fstrc.open(std::string(argv[1]).append(".replace").c_str());
+		std::ofstream output_fstrm;
+		output_fstrm.open(std::string(argv[1]).append(".replace").c_str());
 		std::string	line;
 		do
 		{
-			std::getline(input_fstrc, line);
+			std::getline(input_fstrm, line);
 			std::size_t find_str = line.find(argv[2]);
 			if (find_str != std::string::npos) {
-				output_fstrc << line.substr(0, find_str);
-				output_fstrc << argv[3];
+				output_fstrm << line.substr(0, find_str);
+				output_fstrm << argv[3];
 				line = line.substr(find_str + std::string(argv[2]).length());
-				output_fstrc << line;
+				output_fstrm << line;
 			}
 			else
-				output_fstrc << line;
-			if (!input_fstrc.eof())
-				output_fstrc << std::endl;
-		} while (!input_fstrc.eof());
+				output_fstrm << line;
+			if (!input_fstrm.eof())
+				output_fstrm << std::endl;
+		} while (!input_fstrm.eof());
+		input_fstrm.close();
+		output_fstrm.close();
 	}	
 	return 0;
 }
