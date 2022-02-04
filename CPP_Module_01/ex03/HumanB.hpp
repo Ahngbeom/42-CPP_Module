@@ -6,11 +6,10 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 01:24:44 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/02 23:58:44 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/04 21:48:26 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
 #ifndef HUMAN_B_HPP
 # define HUMAN_B_HPP
 

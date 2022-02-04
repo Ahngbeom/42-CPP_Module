@@ -6,11 +6,10 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 01:24:45 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/03 00:47:22 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/04 21:24:34 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
 #ifndef WEAPON_HPP
 # define WEAPON_HPP
 

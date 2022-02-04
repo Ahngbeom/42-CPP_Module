@@ -6,13 +6,13 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 01:55:43 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/03 01:12:09 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/04 21:49:08 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-HumanB::HumanB( std::string name ) : _name(name) {
+HumanB::HumanB( std::string name ) : _weapon(NULL), _name(name) {
 }
 
 HumanB::~HumanB() {
