@@ -6,25 +6,33 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 19:00:37 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/02 20:41:14 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/04 15:24:28 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-# define N	10
-
-int main(void)
+int main(int argc, char const *argv[])
 {
-	Zombie*	zb_horde = zombieHorde(N, "Soldier");
-	
-	if (zb_horde != NULL)
-	{
-		for (size_t i = 0; i < N; i++)
+	if (argc != 3) {
+		std::cout << "Please enter a arguments" << std::endl;
+		std::cout << "Usage: ./ZombieHorde [ NAME ] [ HEAD COUNT ]" << std::endl;
+	}
+	else {
+		int					head_cnt;
+		std::istringstream	iss( argv[2] );
+		iss >> head_cnt;
+		std::string			name( argv[1] );
+		Zombie*				zb_horde = zombieHorde(head_cnt, name);
+		
+		if (zb_horde != NULL)
 		{
-			zb_horde[i].announce();
+			for (int i = 0; i < head_cnt; i++)
+			{
+				zb_horde[i].announce();
+			}
+			delete [] zb_horde;
 		}
-		delete [] zb_horde;
 	}
 	return (0);
 } 

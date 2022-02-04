@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 19:04:46 by bahn              #+#    #+#             */
-/*   Updated: 2022/01/31 00:42:29 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/04 16:01:06 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 # include <iostream>
 # include <string>
+# include <sstream>
 
 class Zombie
 {
@@ -25,6 +26,7 @@ public:
 	Zombie();
 	Zombie( std::string name );
 	~Zombie();
+
 	void	announce( void );
 };
 
