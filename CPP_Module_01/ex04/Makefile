@@ -6,7 +6,7 @@
 #    By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/04 21:56:49 by bahn              #+#    #+#              #
-#    Updated: 2022/02/04 23:16:09 by bahn             ###   ########.fr        #
+#    Updated: 2022/02/05 22:32:50 by bahn             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ clean :
 	$(RM) $(OBJS)
 
 fclean : clean
-	$(RM) $(NAME)
+	$(RM) $(NAME) ./*.replace
 
 re : fclean all
 
