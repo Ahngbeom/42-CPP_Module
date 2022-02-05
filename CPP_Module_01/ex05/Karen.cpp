@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 00:44:21 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/05 21:52:37 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/05 22:35:27 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,5 @@ void 	Karen::complain( std::string level ) {
 	}
 	if (this->func != NULL)
 		(this->*func)();
+	std::cout << std::endl;
 }
