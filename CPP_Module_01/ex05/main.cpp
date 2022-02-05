@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 00:43:47 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/05 14:09:36 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/05 21:53:12 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@ int main( void )
 	karen.complain("INFO");
 	karen.complain("WARNING");
 	karen.complain("ERROR");
+	karen.complain("Hello ?");
 	return 0;
 }

@@ -6,20 +6,18 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 00:44:21 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/05 15:09:47 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/05 20:13:28 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Karen.hpp"
 
-// typedef	void	(Karen::*func)();
-
 Karen::Karen() : func(NULL)
 {
-	arr_level[0] = "DEBUG";
-	arr_level[1] = "INFO";
-	arr_level[2] = "WARNING";
-	arr_level[3] = "ERROR";
+	arr_level[DEBUG] = "DEBUG";
+	arr_level[INFO] = "INFO";
+	arr_level[WARNING] = "WARNING";
+	arr_level[ERROR] = "ERROR";
 }
 
 Karen::~Karen()
@@ -36,7 +34,7 @@ void	Karen::info( void ) {
 	std::cout << "[ INFO ]" <<std::endl;
 	std::cout << "I cannot believe adding extra bacon cost more money." << std::endl;
 	std::cout << "You don’t put enough! If you did I would not have to ask for it!" << std::endl;
-	func = NULL;
+	func = &Karen::warning;
 }
 void	Karen::warning( void ) {
 	std::cout << "[ WARNING ]" <<std::endl;
@@ -55,9 +53,9 @@ void	Karen::insignificant_problem( void ) {
 	func = NULL;
 }
 
-
 void 	Karen::complain( std::string level ) {
 	size_t	i;
+	
 	for (i = DEBUG; i <= ERROR; i++)
 	{
 		if (level.compare(arr_level[i]) == 0 )
@@ -67,19 +65,19 @@ void 	Karen::complain( std::string level ) {
 	{
 	case DEBUG:
 		func = &Karen::debug;
-		break;
+		break ;
 	case INFO:
 		func = &Karen::info;
-		break;
+		break ;
 	case WARNING:
 		func = &Karen::warning;
-		break;
+		break ;
 	case ERROR:
 		func = &Karen::error;
-		break;
+		break ;
 	default:
 		func = &Karen::insignificant_problem;
-		break;
+		break ;
 	}
 	while (func != NULL) {
 		(this->*func)();
