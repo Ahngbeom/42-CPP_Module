@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 19:55:31 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/08 16:53:56 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/09 00:32:29 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ public:
 	Fixed(const int);
 	~Fixed();
 
+	Fixed&	operator=(const Fixed& fixed);
 	Fixed&	operator+(const Fixed& fixed);
 	Fixed&	operator-(const Fixed& fixed);
 	Fixed&	operator*(const Fixed& fixed);

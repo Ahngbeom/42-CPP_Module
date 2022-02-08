@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 19:55:01 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/08 17:11:02 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/09 00:20:50 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,14 @@ int main( void ) {
 		std::cout << b << std::endl;
 		
 		std::cout << Fixed::max( a, b ) << std::endl;
-		Fixed::max(a, b);
 	}
 	std::cout << "----------------------------------" << std::endl;
 	{
 		Fixed a(3);
-		Fixed const b( Fixed( 5.05f ) + Fixed( 2 ) );
-		Fixed const c( Fixed( 5.05f ) - Fixed( 2 ) );
-		Fixed const d( Fixed( 5.05f ) * Fixed( 2 ) );
-		Fixed const e( Fixed( 5.05f ) / Fixed( 2 ) );
+		Fixed const b( Fixed( 4.16f ) + Fixed( 2 ) );
+		Fixed const c( Fixed( 9.55f ) - Fixed( 4 ) );
+		Fixed const d( Fixed( 2.05f ) * Fixed( 8 ) );
+		Fixed const e( Fixed( 30.05f ) / Fixed( 8 ) );
 		
 		std::cout << "a " << std::setw(16) << ": " << a << std::endl;
 		std::cout << "pre-increase a " << std::setw(3) << ": " << ++a << std::endl;

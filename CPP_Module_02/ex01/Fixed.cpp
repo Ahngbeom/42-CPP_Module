@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 19:56:16 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/08 13:48:27 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/08 23:46:00 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,17 @@ Fixed::Fixed() : _fixedPointVal(0) {
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const Fixed& fixed) : _fixedPointVal(0) {
+Fixed::Fixed(const Fixed& fixed) {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = fixed;
 }
 
-Fixed::Fixed(const int n) : _fixedPointVal(0) {
+Fixed::Fixed(const int n) {
 	std::cout << "Int constructor called" << std::endl;
 	_fixedPointVal = n << _fractBits;
 }
 
-Fixed::Fixed(const float n) : _fixedPointVal(0) {
+Fixed::Fixed(const float n) {
 	std::cout << "Float constructor called" << std::endl;
 	_fixedPointVal = roundf(n * pow(2, _fractBits));
 }

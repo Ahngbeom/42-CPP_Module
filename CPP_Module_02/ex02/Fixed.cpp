@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 19:56:16 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/08 17:12:29 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/09 00:33:27 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ Fixed::Fixed(const Fixed& fixed) : _fixedPointVal(0) {
 	*this = fixed;
 }
 
-Fixed::Fixed(const int n) : _fixedPointVal(0) {
-	_fixedPointVal = n << _fractBits;
+Fixed::Fixed(const int n) : \
+	_fixedPointVal(n << _fractBits) {
 }
 
-Fixed::Fixed(const float n) : _fixedPointVal(0) {
-	_fixedPointVal = roundf(n * pow(2, _fractBits));
+Fixed::Fixed(const float n) : \
+	_fixedPointVal(roundf(n * pow(2, _fractBits))) {
 }
 
 Fixed::~Fixed() {
@@ -39,19 +39,24 @@ Fixed::~Fixed() {
 /********************************
  			OPERATOR
 ********************************/
-/*		Arithmetic		*/
-Fixed&	Fixed::operator+(const Fixed& fixed) {
-	float	n;
 
-	n = this->toFloat() + fixed.toFloat();
-	*this = Fixed(n);
+/*		Assignment			*/
+Fixed& Fixed::operator=(const Fixed& fixed) {
+	if (this != &fixed)
+		this->_fixedPointVal = fixed.getRawBits();
 	return (*this);
 }
-Fixed&	Fixed::operator-(const Fixed& fixed) {
-	float	n;
+/*		Assignment	End		*/
 
-	n = this->toFloat() - fixed.toFloat();
-	*this = Fixed(n);
+
+/*		Arithmetic		*/
+Fixed&	Fixed::operator+(const Fixed& fixed) {
+	_fixedPointVal += fixed.getRawBits();
+	return (*this);
+}
+
+Fixed&	Fixed::operator-(const Fixed& fixed) {
+	_fixedPointVal -= fixed.getRawBits();
 	return (*this);
 }
 

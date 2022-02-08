@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 19:56:16 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/07 19:02:16 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/08 23:07:00 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Fixed::Fixed() : _fixedPointVal(0) {
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const Fixed& fixed) : _fixedPointVal(0) {
+Fixed::Fixed(const Fixed& fixed) {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = fixed;
 }
