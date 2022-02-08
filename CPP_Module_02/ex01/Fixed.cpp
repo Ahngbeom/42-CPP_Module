@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 19:56:16 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/07 23:24:15 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/08 13:48:27 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@ Fixed::Fixed(const Fixed& fixed) : _fixedPointVal(0) {
 
 Fixed::Fixed(const int n) : _fixedPointVal(0) {
 	std::cout << "Int constructor called" << std::endl;
-	// _fixedPointVal = n << _fractBits;
-	_fixedPointVal = n * pow(2, _fractBits);
+	_fixedPointVal = n << _fractBits;
 }
 
 Fixed::Fixed(const float n) : _fixedPointVal(0) {
