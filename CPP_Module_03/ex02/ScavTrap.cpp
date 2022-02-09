@@ -6,11 +6,15 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 20:13:58 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/09 18:32:44 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/09 18:49:04 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
+
+ScavTrap::ScavTrap() {
+	std::cout << "[ScavTrap] Default constructor called" << std::endl;
+}
 
 ScavTrap::ScavTrap(std::string name)
 {
@@ -27,10 +31,6 @@ ScavTrap::~ScavTrap()
 	std::cout << "[ScavTrap] Deconstructor called" << std::endl;
 }
 
-void ScavTrap::guardGate() {
-	std::cout << "ScavTrap < " << name << " > have entered in Gate keeper mode" << std::endl;
-}
-
 void	ScavTrap::attack(std::string const & target) {
 	std::cout << "ScavTrap < " << this->name << \
 				" > attack < " << target << \
@@ -38,3 +38,6 @@ void	ScavTrap::attack(std::string const & target) {
 				<< std::endl;
 }
 
+void ScavTrap::guardGate() {
+	std::cout << "ScavTrap < " << name << " > have entered in Gate keeper mode" << std::endl;
+}

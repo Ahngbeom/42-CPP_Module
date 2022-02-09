@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 19:52:43 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/09 18:31:54 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/09 18:45:53 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,22 @@ void	ClapTrap::displayAttributes( void ) {
 	std::cout << "-> Hit Points : " << hitPoints << std::endl;
 	std::cout << "-> Energy Points : " << energyPoints << std::endl;
 	std::cout << "-> Attack Damage : " << attackDamage << std::endl;
+}
+
+std::string	ClapTrap::getName( void ) {
+	return (name);
+}
+
+int	ClapTrap::getHitPoints( void ) {
+	return (hitPoints);
+}
+
+int	ClapTrap::getEnergyPoints( void ) {
+	return (energyPoints);	
+}
+
+int	ClapTrap::getAttackDamage( void ) {
+	return (attackDamage);
 }
 
 void ClapTrap::attack(std::string const & target) {

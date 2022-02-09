@@ -1,40 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/08 20:13:58 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/09 18:32:44 by bahn             ###   ########.fr       */
+/*   Created: 2022/02/09 17:29:37 by bahn              #+#    #+#             */
+/*   Updated: 2022/02/09 18:57:46 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-ScavTrap::ScavTrap(std::string name)
+FragTrap::FragTrap()
 {
+	std::cout << "[FragTrap] Default constructor called" << std::endl;
+}
+
+FragTrap::FragTrap(std::string name)
+{
+	std::cout << "[FragTrap] Name constructor called" << std::endl;
 	this->name = name;
 	hitPoints = 100;
-	energyPoints = 50;
-	attackDamage = 20;
-	std::cout << "[ScavTrap] Name constructor called" << std::endl;
+	energyPoints = 100;
+	attackDamage = 30;
 	this->displayAttributes();
 }
 
-ScavTrap::~ScavTrap()
+FragTrap::~FragTrap()
 {
-	std::cout << "[ScavTrap] Deconstructor called" << std::endl;
+	std::cout << "[FragTrap] Deconstructor called" << std::endl;
 }
 
-void ScavTrap::guardGate() {
-	std::cout << "ScavTrap < " << name << " > have entered in Gate keeper mode" << std::endl;
-}
-
-void	ScavTrap::attack(std::string const & target) {
-	std::cout << "ScavTrap < " << this->name << \
+void	FragTrap::attack(std::string const & target) {
+	std::cout << "FragTrap < " << this->name << \
 				" > attack < " << target << \
 				" >, causing < " << this->attackDamage << " > points of damage!" \
 				<< std::endl;
+}
+
+void 	FragTrap::highFivesGuys(void) {
+	std::cout << "FragTrap < " << this->name << \
+				" > High Fives Guys~" << \
+				std::endl;
 }
 

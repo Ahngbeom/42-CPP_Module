@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/08 19:52:33 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/09 18:30:03 by bahn             ###   ########.fr       */
+/*   Created: 2022/02/09 17:29:44 by bahn              #+#    #+#             */
+/*   Updated: 2022/02/09 18:57:52 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#pragma once
+#ifndef FRAG_TRAP_HPP
+# define FRAG_TRAP_HPP
 
-int main( void )
+# include "ClapTrap.hpp"
+
+class FragTrap : public ClapTrap
 {
-	ClapTrap	clap("CLAP");
-	ScavTrap	scav("SCAV");
+private:
 
-	clap.attack("SCAV");
-	scav.takeDamage(0);
-	scav.guardGate();
-	scav.attack("CLAP");
-	clap.takeDamage(20);
-	// clap.guardGate();
+public:
+	FragTrap();
+	FragTrap(std::string name);
+	~FragTrap();
+	void	attack(std::string const & target);
+	void 	highFivesGuys(void);
+};
 
-	clap.displayAttributes();
-	scav.displayAttributes();
-	return 0;
-}
+#endif

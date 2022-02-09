@@ -6,10 +6,11 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 19:52:50 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/09 18:28:52 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/09 18:43:53 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #ifndef CLAP_TRAP_HPP
 # define CLAP_TRAP_HPP
 
@@ -27,11 +28,15 @@ public:
 	ClapTrap(std::string name);
 	~ClapTrap();
 
-	void	displayAttributes( void );
+	void		displayAttributes( void );
+	std::string	getName( void );
+	int			getHitPoints( void );
+	int			getEnergyPoints( void );
+	int			getAttackDamage( void );
 
-	void 	attack(std::string const & target);
-	void 	takeDamage(unsigned int amount);
-	void 	beRepaired(unsigned int amount);
+	void 		attack(std::string const & target);
+	void 		takeDamage(unsigned int amount);
+	void 		beRepaired(unsigned int amount);
 };
 
 #endif
