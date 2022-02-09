@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 19:52:33 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/09 23:05:36 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/09 23:09:40 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ int main( void )
 	scav.takeDamage(diamond.getAttackDamage());
 	diamond.attack("frag");
 	frag.takeDamage(diamond.getAttackDamage());
+	
+	diamond.whoAmI();
 	std::cout << "========================== END =============================" << std::endl;
 
 	clap.displayAttributes();
