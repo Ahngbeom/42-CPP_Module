@@ -6,11 +6,12 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 17:29:44 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/09 22:54:15 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/10 17:05:01 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+
 #ifndef FRAG_TRAP_HPP
 # define FRAG_TRAP_HPP
 
@@ -23,7 +24,6 @@ private:
 public:
 	FragTrap();
 	FragTrap(std::string name);
-	FragTrap(int hitPoints);
 	~FragTrap();
 	void	attack(std::string const & target);
 	void 	highFivesGuys(void);

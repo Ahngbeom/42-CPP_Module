@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 17:29:37 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/09 23:02:40 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/10 17:05:30 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,6 @@ FragTrap::FragTrap(std::string name)
 	energyPoints = 100;
 	attackDamage = 30;
 	this->displayAttributes();
-}
-
-FragTrap::FragTrap(int hitPoints) {
-	this->hitPoints = hitPoints;	
 }
 
 FragTrap::~FragTrap()

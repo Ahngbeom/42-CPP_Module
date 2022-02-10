@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 19:52:33 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/08 20:09:07 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/10 15:29:47 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 int main( void )
 {
-	ClapTrap	ct("bahn");
+	ClapTrap	me("bahn");
 
-	ct.takeDamage(1);
-	ct.attack("42Seoul");
+	me.takeDamage(1);
+	me.attack("42Seoul");
+	me.beRepaired(5);
 	return 0;
 }

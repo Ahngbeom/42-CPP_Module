@@ -6,9 +6,11 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 20:14:05 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/09 22:48:24 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/10 17:02:44 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#pragma once
 
 #ifndef SCAV_TRAP_HPP
 # define SCAV_TRAP_HPP

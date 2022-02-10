@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 19:52:33 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/09 23:09:40 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/10 17:48:44 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ int main( void )
 
 	scav.guardGate();
 
-	diamond.attack("scav");
-	scav.takeDamage(diamond.getAttackDamage());
 	diamond.attack("frag");
 	frag.takeDamage(diamond.getAttackDamage());
+	diamond.attack("scav");
+	scav.takeDamage(diamond.getAttackDamage());
 	
 	diamond.whoAmI();
 	std::cout << "========================== END =============================" << std::endl;
