@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 23:20:46 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/11 21:53:16 by bahn             ###   ########.fr       */
+/*   Created: 2022/02/11 10:24:14 by bahn              #+#    #+#             */
+/*   Updated: 2022/02/11 21:54:30 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
 
-int main()
+Animal::Animal() : type("")
 {
-	const Animal*	meta = new Animal();
-	const Animal*	j = new Dog();
-	const Animal*	i = new Cat();
-	
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	std::cout << meta->getType() << " " << std::endl;
+	std::cout << "[Animal] Constructor called" << std::endl;
+}
 
-	i->makeSound();
-	j->makeSound();
-	meta->makeSound();
-	
-	delete i;
-	delete j;
-	delete meta;
-	return 0;
+Animal::~Animal()
+{
+	std::cout << "[Animal] Deconstructor called" << std::endl;
+}
+
+std::string	Animal::getType() const{
+	return (type);
+}
+
+void	Animal::makeSound( void ) const {
+	std::cout << "..................." << std::endl;
 }

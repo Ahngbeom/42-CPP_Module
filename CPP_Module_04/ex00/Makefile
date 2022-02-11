@@ -6,7 +6,7 @@
 #    By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 23:20:01 by bahn              #+#    #+#              #
-#    Updated: 2022/02/09 23:20:34 by bahn             ###   ########.fr        #
+#    Updated: 2022/02/11 17:30:53 by bahn             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,10 @@ INCFLAGS = -I.
 RM = rm -rf
 
 SRCS_DIR = ./
-SRCS_FILE = main.cpp
+SRCS_FILE = main.cpp \
+			Animal.cpp \
+			Dog.cpp \
+			Cat.cpp
 SRCS = $(addprefix $(SRCS_DIR), $(SRCS_FILE))
 OBJS = $(SRCS:.cpp=.o)
 
