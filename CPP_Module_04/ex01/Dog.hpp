@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 10:25:09 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/11 22:05:52 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/12 12:20:06 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ public:
 
 	void	makeSound( void ) const;
 	void	getIdea(const int& index) const;
-	
-	Dog&	operator=(const Dog& dog);
 };
 
 #endif

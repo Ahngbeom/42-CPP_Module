@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 10:26:03 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/11 22:13:09 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/12 12:20:02 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,4 @@ void	Dog::makeSound( void ) const {
 
 void	Dog::getIdea(const int& index) const {
 	std::cout << brain->comeToIdea(index) << std::endl;
-}
-
-
-Dog&	Dog::operator=(const Dog& dog) {
-	if (this != &dog)
-	{
-		this->type = dog.getType();
-		this->brain = dog.brain;
-	}
-	return (*this);
 }
