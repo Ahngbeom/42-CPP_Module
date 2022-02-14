@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 23:20:46 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/11 22:11:45 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/14 22:07:06 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int main()
 
 	for (size_t i = 0; i < 100; i++)
 	{
-		animals[i]->getType();
+		std::cout << animals[i]->getType() + " : ";
 		animals[i]->makeSound();
 		animals[i]->getIdea(i);
 	}

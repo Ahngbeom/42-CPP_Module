@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 10:26:03 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/12 12:20:02 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/14 21:47:30 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ Dog::~Dog()
 }
 
 void	Dog::makeSound( void ) const {
-	std::cout << "WOOF! WOOF!" << std::endl;
+	std::cout << "WOOF! WOOF!";
 }
 
 void	Dog::getIdea(const int& index) const {
-	std::cout << brain->comeToIdea(index) << std::endl;
+	std::cout << "(" + brain->comeToIdea(index) + ")" << std::endl;
 }

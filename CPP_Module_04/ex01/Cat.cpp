@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 10:26:03 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/11 22:13:07 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/14 21:47:58 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ Cat::~Cat()
 }
 
 void	Cat::makeSound( void ) const {
-	std::cout << "MEOW~ MEOW~" << std::endl;
+	std::cout << "MEOW~ MEOW~";
 }
 
 void	Cat::getIdea(const int& index) const {
-	std::cout << brain->comeToIdea(index) << std::endl;
+	std::cout << "(" + brain->comeToIdea(index) + ")" << std::endl;
 }
