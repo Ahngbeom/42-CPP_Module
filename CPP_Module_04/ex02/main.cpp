@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 23:20:46 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/12 14:42:52 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/14 22:27:10 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,10 @@ int main()
 	std::cout << "I am " << j->getType() << "." << std::endl;
 	std::cout << "I am " << i->getType() << "." << std::endl;
 
-	i->makeSound();
 	j->makeSound();
+	i->makeSound();
 	
-	std::srand((unsigned int)time(NULL));
-	int	rand_num;
-	
-	rand_num = rand() % 100;
-	i->getIdea(rand_num);
-	
-	rand_num = rand() % 100;
-	j->getIdea(rand_num);
-
-	delete i;
 	delete j;
+	delete i;
 	return 0;
 }

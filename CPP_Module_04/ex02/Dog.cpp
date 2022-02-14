@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 10:26:03 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/12 14:41:53 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/14 22:26:49 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,15 @@ std::string	Dog::getType( void ) const {
 }
 
 void	Dog::makeSound( void ) const {
-	std::cout << "Dog : WOOF! WOOF!" << std::endl;
+	std::cout << "Dog : WOOF! WOOF! ";
+
+	std::srand((unsigned int)time(NULL));
+	int	rand_num;
+	
+	rand_num = rand() % 100;
+	getIdea(rand_num);
 }
 
 void	Dog::getIdea(const int& index) const {
-	std::cout << "Dog came up with is a ";
-	std::cout << brain->comeToIdea(index) << std::endl;
+	std::cout << "(" + brain->comeToIdea(index) + ")" << std::endl;
 }
