@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 10:25:09 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/12 12:17:38 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/15 12:02:54 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,8 @@ public:
 	Dog();
 	~Dog();
 
-	Dog&	operator=(const Dog& dog);
-
-	virtual std::string	getType( void ) const;
-
-	virtual void	makeSound( void ) const;
-	virtual void	getIdea(const int& index) const;
+	void	makeSound( void ) const;
+	void	getIdea(const int& index) const;
 };
 
 #endif

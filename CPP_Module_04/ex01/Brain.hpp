@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 19:51:47 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/11 22:31:05 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/15 11:27:53 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define BRAIN_HPP
 
 # include <iostream>
+# include <fstream>
+# include <string>
 
 class Brain
 {

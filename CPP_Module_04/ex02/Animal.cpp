@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 10:24:14 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/12 14:48:36 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/15 11:33:13 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,8 @@ Animal::Animal() : type("")
 Animal::~Animal()
 {
 	std::cout << "[Animal] Deconstructor called" << std::endl;
+}
+
+std::string	Animal::getType( void ) const {
+	return (type);
 }

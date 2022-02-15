@@ -6,21 +6,21 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 15:09:39 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/13 00:13:57 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/15 21:18:58 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHARACTER_HPP
 # define CHARACTER_HPP
 
-# include "ICharacter.hpp"
 # include "AMateria.hpp"
+# include "ICharacter.hpp"
 
 class Character : public ICharacter
 {
 private:
 	std::string	name;
-	AMateria*	inven[4];
+	AMateria*	inven[AMATERIA_MAX];
 public:
 	Character(const std::string name);
 	~Character();

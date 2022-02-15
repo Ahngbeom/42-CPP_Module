@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 02:24:17 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/13 02:48:55 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/15 22:09:41 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,15 @@
 
 Cure::Cure() : AMateria("cure")
 {
-	std::cout << "Cure Constructor called" << std::endl;
+	// std::cout << "Cure Constructor called" << std::endl;
 }
 
 Cure::~Cure()
 {
-	std::cout << "Cure Deconstructor called" << std::endl;
+	// std::cout << "Cure Deconstructor called" << std::endl;
 }
 
 AMateria* Cure::clone() const {
-	// Default Copy Constructor. 
-	// But A new instance is created by dynamically allocating it using the 'new' keyword.
 	return (new Cure(*this));
 }
 

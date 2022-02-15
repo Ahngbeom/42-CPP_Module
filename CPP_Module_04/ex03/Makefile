@@ -6,7 +6,7 @@
 #    By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 23:20:01 by bahn              #+#    #+#              #
-#    Updated: 2022/02/13 03:00:14 by bahn             ###   ########.fr        #
+#    Updated: 2022/02/15 13:08:10 by bahn             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ RM = rm -rf
 
 SRCS_DIR = ./
 SRCS_FILE = main.cpp \
-			AMateria.cpp \
+			Materia.cpp \
 			Character.cpp \
 			MateriaSource.cpp \
 			Ice.cpp Cure.cpp

@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 16:30:52 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/13 02:59:29 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/15 21:18:49 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 class MateriaSource : public IMateriaSource
 {
 private:
-	
+	AMateria*	srcs[AMATERIA_MAX];
 public:
 	MateriaSource();
 	~MateriaSource();

@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 10:25:09 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/12 12:17:35 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/15 12:03:00 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,8 @@ public:
 	Cat();
 	~Cat();
 
-	virtual std::string	getType( void ) const;
-
-	virtual void	makeSound( void ) const;
-	virtual void	getIdea(const int& index) const;
+	void	makeSound( void ) const;
+	void	getIdea(const int& index) const;
 };
 
 #endif

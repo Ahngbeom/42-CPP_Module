@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 10:26:03 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/14 22:26:49 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/15 12:14:49 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,18 +25,11 @@ Dog::~Dog()
 	delete brain;
 }
 
-std::string	Dog::getType( void ) const {
-	return (type);
-}
-
 void	Dog::makeSound( void ) const {
-	std::cout << "Dog : WOOF! WOOF! ";
+	std::cout << getType() + " : ";
+	std::cout << "WOOF! WOOF! ";
 
-	std::srand((unsigned int)time(NULL));
-	int	rand_num;
-	
-	rand_num = rand() % 100;
-	getIdea(rand_num);
+	getIdea(rand() % 100);
 }
 
 void	Dog::getIdea(const int& index) const {

@@ -6,13 +6,11 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 19:51:45 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/14 22:23:34 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/15 11:29:54 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
-#include <fstream>
-#include <string>
 
 Brain::Brain()
 {

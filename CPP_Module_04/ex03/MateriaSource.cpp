@@ -6,36 +6,47 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 16:30:52 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/13 03:00:52 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/15 21:17:56 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MateriaSource.hpp"
 
-MateriaSource::MateriaSource() : IMateriaSource()
+MateriaSource::MateriaSource()
 {
-	std::cout << "MateriaSource Constructor called" << std::endl;
+	// std::cout << "MateriaSource Constructor called" << std::endl;
+	for (size_t i = 0; i < sizeof(srcs) / sizeof(AMateria*); i++)
+	{
+		srcs[i] = NULL;
+	}
 }
 
 MateriaSource::~MateriaSource()
 {
-	std::cout << "MateriaSource Constructor called" << std::endl;
+	// std::cout << "MateriaSource Constructor called" << std::endl;
+	for (size_t i = 0; i < sizeof(srcs) / sizeof(AMateria*); i++)
+	{
+		delete srcs[i];
+	}
 }
 
 void MateriaSource::learnMateria(AMateria* mater) {
-	size_t	i = 0;
+	size_t	i;
 
-	while (srcs[i] != NULL)
-		i++;
-	if (i < 4)
-		srcs[i] = mater->clone();
+	for (i = 0; i < AMATERIA_MAX && srcs[i] != NULL; i++)
+	{
+		if (srcs[i]->getType().compare(mater->getType()) == 0)
+			return ;
+	}
+	if (i < AMATERIA_MAX)
+		srcs[i] = mater;
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type) {
-	if (type.compare("ice") == 0)
-		return (new Ice());
-	else if (type.compare("cure") == 0)
-		return (new Cure());
-	else
-		return (NULL);
+	for (std::size_t i = 0; i < AMATERIA_MAX && srcs[i] != NULL; i++) {
+		if (type.compare(srcs[i]->getType()) == 0) {
+			return (srcs[i]->clone());
+		}
+	}
+	return (NULL);
 }

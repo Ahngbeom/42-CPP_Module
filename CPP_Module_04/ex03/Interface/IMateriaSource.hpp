@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 16:30:13 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/13 02:51:24 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/15 20:37:11 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 
 class IMateriaSource
 {
-protected:
-	AMateria*	srcs[4];
 public:
 	virtual ~IMateriaSource() {}
 	virtual void learnMateria(AMateria*) = 0;

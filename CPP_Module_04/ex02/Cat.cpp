@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 10:26:03 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/14 22:26:46 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/15 12:14:59 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,18 +25,11 @@ Cat::~Cat()
 	delete brain;
 }
 
-std::string	Cat::getType( void ) const {
-	return (type);
-}
-
 void	Cat::makeSound( void ) const {
-	std::cout << "Cat : MEOW~ MEOW~ ";
+	std::cout << getType() + " : ";
+	std::cout << "MEOW~ MEOW~ ";
 
-	std::srand((unsigned int)time(NULL));
-	int	rand_num;
-	
-	rand_num = rand() % 100;
-	getIdea(rand_num);
+	getIdea(rand() % 100);
 }
 
 void	Cat::getIdea(const int& index) const {
