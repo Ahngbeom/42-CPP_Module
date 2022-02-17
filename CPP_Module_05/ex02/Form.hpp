@@ -1,35 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/13 22:28:23 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/17 21:27:06 by bahn             ###   ########.fr       */
+/*   Created: 2022/02/16 13:42:50 by bahn              #+#    #+#             */
+/*   Updated: 2022/02/18 01:48:55 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BUREAUCRAT_HPP
-# define BUREAUCRAT_HPP
+#ifndef FORM_HPP
+# define FORM_HPP
 
 # include <iostream>
 # include <exception>
+# include "Bureaucrat.hpp"
 
-class Bureaucrat
+class Bureaucrat;
+
+class Form
 {
 private:
-	const	std::string	_name;
-	int					_grade;
+	const std::string	_name;
+	bool				_signed;
+	bool				_executed;
+	const int			_signGrade;
+	const int			_executeGrade;
 public:
-	Bureaucrat(std::string name, int grade);
-	~Bureaucrat();
+	Form(const std::string name, const int signGrade, const int executeGrade);
+	virtual ~Form();
 
-	std::string	getName();
-	int			getGrade();
+	std::string	getName( void ) const ;
+	int	getSignGrade( void ) const ;
+	int	getExecuteGrade( void ) const ;
+	bool	getSigned( void ) const ;
+	
+	void	beSigned(Bureaucrat& bureau);
+	void	beExecuted(Bureaucrat& bureau);
 
-	void	incrementTheGrade(std::size_t amount);
-	void	decrementTheGrade(std::size_t amount);
+	virtual void	execute(Bureaucrat const & executor) = 0;
 
 	class GradeTooHighException : public std::exception {
 		private:
@@ -51,6 +61,6 @@ public:
 	
 };
 
-std::ostream&	operator<<(std::ostream& ostrm, Bureaucrat& bureau);
+std::ostream&	operator<<(std::ostream& ostrm, Form& form);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 22:30:47 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/14 17:16:40 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/18 00:51:39 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : \
 	{
 		std::cout << "[Bureaucrat] Name & Grade constructor called ";
 		if (_grade > 150)
-			throw GradeTooLowException("Grade Too Lowest");
+			throw GradeTooLowException("Grade too lowest.");
 		else if (_grade < 1)
-			throw GradeTooHighException("Grade Too Highest");
+			throw GradeTooHighException("Grade too high.");
 		else 
 			std::cout << std::endl;
 	}
@@ -50,9 +50,9 @@ void	Bureaucrat::incrementTheGrade(std::size_t amount) {
 		std::cout << getName() << ", promote!!! ";
 		_grade -= amount;
 		if (_grade > 150)
-			throw GradeTooLowException("Grade Too Lowest");
+			throw GradeTooLowException("Grade too low.");
 		else if (_grade < 1)
-			throw GradeTooHighException("Grade Too Highest");
+			throw GradeTooHighException("Grade too high.");
 		else
 			std::cout << std::endl;
 	}
@@ -68,9 +68,9 @@ void	Bureaucrat::decrementTheGrade(std::size_t amount) {
 		std::cout << getName() << ", demote... ";
 		_grade += amount;
 		if (_grade > 150)
-			throw GradeTooLowException("Grade Too Lowest");
+			throw GradeTooLowException("Grade too low.");
 		else if (_grade < 1)
-			throw GradeTooHighException("Grade Too Highest");
+			throw GradeTooHighException("Grade too high.");
 		else
 			std::cout << std::endl;
 	}
@@ -114,9 +114,9 @@ std::ostream&	operator<<(std::ostream& ostrm, Bureaucrat& bureau) {
 		ostrm << "<" << bureau.getName() << ">, ";
 		ostrm << "bureaucrat grade <" << bureau.getGrade() << "> ";
 		if (bureau.getGrade() > 150)
-			throw Bureaucrat::GradeTooLowException("Grade Too Lowest");
+			throw Bureaucrat::GradeTooLowException("Grade too low.");
 		else if (bureau.getGrade() < 1)
-			throw Bureaucrat::GradeTooHighException("Grade Too Highest");
+			throw Bureaucrat::GradeTooHighException("Grade too high.");
 		else
 			std::cout << std::endl;
 	}

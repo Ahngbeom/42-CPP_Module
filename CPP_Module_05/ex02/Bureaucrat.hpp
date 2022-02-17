@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 22:28:23 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/17 21:27:06 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/18 01:45:14 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # include <iostream>
 # include <exception>
+# include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -25,30 +28,14 @@ public:
 	Bureaucrat(std::string name, int grade);
 	~Bureaucrat();
 
-	std::string	getName();
-	int			getGrade();
+	std::string	getName() const ;
+	int			getGrade() const ;
 
+	void	signForm(Form& form) const ;
+	void	executeForm(Form const & form) const ;
+	
 	void	incrementTheGrade(std::size_t amount);
 	void	decrementTheGrade(std::size_t amount);
-
-	class GradeTooHighException : public std::exception {
-		private:
-			std::string	_error;
-		public:
-			GradeTooHighException(std::string error);
-			~GradeTooHighException() _GLIBCXX_NOTHROW;
-			virtual const char* what() const throw();
-	};
-	
-	class GradeTooLowException : public std::exception {
-		private:
-			std::string	_error;
-		public:
-			GradeTooLowException(std::string error);
-			~GradeTooLowException() _GLIBCXX_NOTHROW;
-			virtual const char* what() const throw();
-	};
-	
 };
 
 std::ostream&	operator<<(std::ostream& ostrm, Bureaucrat& bureau);
