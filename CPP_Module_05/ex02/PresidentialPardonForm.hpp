@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/17 18:05:40 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/18 14:10:38 by bahn             ###   ########.fr       */
+/*   Created: 2022/02/18 14:18:55 by bahn              #+#    #+#             */
+/*   Updated: 2022/02/18 14:28:26 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef SHRUBBERY_CREATION_FORM_HPP
-# define SHRUBBERY_CREATION_FORM_HPP
-
-# include <iostream>
-# include <string>
-# include <fstream>
+#ifndef PRESIDENTIAL_PARDON_FORM
+# define PRESIDENTIAL_PARDON_FORM
 
 # include "Form.hpp"
 # include "ASCII_ART.hpp"
 
-class Form;
-
-class ShrubberyCreationForm : public Form
+class PresidentialPardonForm : public Form
 {
 private:
 	
 public:
-	ShrubberyCreationForm(std::string const & target);
-	~ShrubberyCreationForm();
+	PresidentialPardonForm(std::string const & target);
+	~PresidentialPardonForm();
 
 	virtual void	execute(Bureaucrat const & executer);
 };

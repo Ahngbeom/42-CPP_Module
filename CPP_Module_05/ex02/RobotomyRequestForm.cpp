@@ -1,46 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
+/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/17 18:05:39 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/18 14:41:02 by bahn             ###   ########.fr       */
+/*   Created: 2022/02/18 12:10:13 by bahn              #+#    #+#             */
+/*   Updated: 2022/02/18 14:45:53 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string const & target)
- :	Form(target, 145, 137)
+RobotomyRequestForm::RobotomyRequestForm(std::string const & target)
+ : Form(target, 72, 45)
 {
-	
+	std::srand((unsigned int)time(NULL));
 }
 
-ShrubberyCreationForm::~ShrubberyCreationForm()
+RobotomyRequestForm::~RobotomyRequestForm()
 {
 }
 
-void	ShrubberyCreationForm::execute(Bureaucrat const & executer) {
+void	RobotomyRequestForm::execute(Bureaucrat const & executer) {
 	if (executer.getGrade() < 1)
 		throw GradeTooHighException("a grade required for executing is too high.");
 	else if (executer.getGrade() > getExecuteGrade())
 		throw GradeTooLowException("a grade required for executing is too low.");
 	else {
-		std::ofstream	oFile;
-		std::string		fName(getName().append("_shrubbery"));
-		std::string		line;
-		
-		oFile.open(fName.c_str(), std::fstream::out | std::fstream::trunc);
-		oFile << TREES;
-		oFile.close();
-		std::ifstream	iFile(fName.c_str());
-		do
-		{
-			std::getline(iFile, line);
-			std::cout << line << std::endl;
-		} while (!iFile.eof());
-		iFile.close();
+		if (rand() % 100 >= 50) {
+			std::cout << DRILL;
+			std::cout << *this << " has been robotomized successfully" << " 50% of the time" << std::endl;
+		}
+		else
+			std::cout << *this << " has been robotomized unsuccessfully" << " 50% of the time" << std::endl;
 	}
 }

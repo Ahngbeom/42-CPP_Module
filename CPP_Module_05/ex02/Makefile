@@ -6,7 +6,7 @@
 #    By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/13 22:24:07 by bahn              #+#    #+#              #
-#    Updated: 2022/02/18 02:52:11 by bahn             ###   ########.fr        #
+#    Updated: 2022/02/18 14:44:15 by bahn             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,9 @@ SRCS_DIR = ./
 SRCS_FILE = main.cpp \
 			Bureaucrat.cpp \
 			Form.cpp \
-			ShrubberyCreationForm.cpp
+			ShrubberyCreationForm.cpp \
+			RobotomyRequestForm.cpp \
+			PresidentialPardonForm.cpp
 SRCS = $(addprefix $(SRCS_DIR), $(SRCS_FILE))
 OBJS = $(SRCS:.cpp=.o)
 
@@ -33,12 +35,13 @@ all : $(NAME)
 
 $(NAME) : $(OBJS)
 	$(CXX) $(CXXFLAGS) $(INCFLAGS) $^ -o $@
+	@ tabs 4
 
 clean : 
 	$(RM) $(OBJS)
 
 fclean : clean
-	$(RM) $(NAME) *_Shrubbery
+	$(RM) $(NAME) *_shrubbery
 
 re : fclean all
 

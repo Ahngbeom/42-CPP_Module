@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 13:42:50 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/18 01:48:55 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/18 14:33:38 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Form
 private:
 	const std::string	_name;
 	bool				_signed;
-	bool				_executed;
+	// bool				_executed;
 	const int			_signGrade;
 	const int			_executeGrade;
 public:
@@ -37,7 +37,7 @@ public:
 	bool	getSigned( void ) const ;
 	
 	void	beSigned(Bureaucrat& bureau);
-	void	beExecuted(Bureaucrat& bureau);
+	// void	beExecuted(Bureaucrat& bureau);
 
 	virtual void	execute(Bureaucrat const & executor) = 0;
 

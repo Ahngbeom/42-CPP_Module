@@ -6,14 +6,14 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 22:46:22 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/18 01:30:17 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/18 14:34:15 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
 Form::Form(const std::string name, const int signGrade, const int executeGrade) 
-	: _name(name), _signed(false), _executed(false), _signGrade(signGrade), _executeGrade(executeGrade)
+	: _name(name), _signed(false), _signGrade(signGrade), _executeGrade(executeGrade)
 {
 	if (_signGrade < 1 || _executeGrade < 1) {
 		if (_signGrade < 1 && _executeGrade < 1)
@@ -62,17 +62,6 @@ void	Form::beSigned(Bureaucrat& bureau) {
 	else
 		throw GradeTooLowException("A grade required for signing is too low.");
 }
-
-void	Form::beExecuted(Bureaucrat& bureau) {
-	_executed = false;
-	if (bureau.getGrade() <= getExecuteGrade() && bureau.getGrade() >= 1)
-		_executed = true;
-	else if (bureau.getGrade() < 1)
-		throw GradeTooHighException("A grade required for executing is too high.");
-	else
-		throw GradeTooLowException("A grade required for executing is too low.");
-}
-
 
 Form::GradeTooHighException::GradeTooHighException(std::string error) : _error(error) {
 
