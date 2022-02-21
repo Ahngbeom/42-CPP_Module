@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 12:04:54 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/21 21:39:04 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/21 21:41:25 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int main(int, char**)
     }
     //SCOPE
 
-    /* Array Elements Checking Myself */
+    /* Checking Array Elements */
     {
         std::cout << std::endl << "Array Elements Checking..." << std::endl;
         {
@@ -46,13 +46,13 @@ int main(int, char**)
             std::cout << "}" << std::endl;
         }
     }
-    /* Array Elements Checking Myself End*/
+    /* Checking Array Elements End*/
 
     {
         Array<int> tmp = numbers;
         Array<int> test(tmp);
 
-        /* Array Copy Checking Myself */
+        /* Checking Array Copy */
         {
             std::cout << std::endl << "Array Copy Checking..." << std::endl;
             {
@@ -71,7 +71,7 @@ int main(int, char**)
                 std::cout << "}" << std::endl;
             }
         }
-        /* Array Copy Checking Myself End*/
+        /* Checking Array Copy End*/
     }
 
     
@@ -106,14 +106,14 @@ int main(int, char**)
         numbers[i] = rand();
     }
 
-    /* Array Elements Checking Myself */
+    /* Checking Array Elements */
     {
         std::cout << std::endl << "Array Elements Checking..." << std::endl;
         {
             std::cout << "[numbers] " << numbers;
         }
     }
-    /* Array Elements Checking Myself End*/
+    /* Checking Array Elements End*/
 
     delete [] mirror;//
     return 0;
