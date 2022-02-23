@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 10:23:20 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/15 11:33:11 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/23 23:46:35 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ protected:
 	std::string type;
 public:
 	Animal();
+	Animal(const Animal& animal);
 	virtual ~Animal();
+	
+	Animal&	operator=(const Animal& animal);
 	
 	std::string	getType( void ) const;
 

@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 19:51:45 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/15 11:29:54 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/23 23:50:33 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,32 @@ Brain::Brain()
 	std::string		idea;
 	
 	f_ideas.open("Ideas.txt");
-	for (size_t i = 0; i < 100; i++)
+	for (size_t i = 0; i < IDEAS_MAX; i++)
 	{
 		std::getline(f_ideas, idea);
 		ideas[i] = idea;
 	}
 }
 
+Brain::Brain(const Brain& brain) {
+	std::cout << "[Brain] Copy Constructor called" << std::endl;
+	*this = brain;
+}
+
 Brain::~Brain()
 {
 	std::cout << "[Brain] Deconstructor called" << std::endl;
+}
+
+Brain& Brain::operator=(const Brain& brain) {
+	std::cout << "[Brain] Assignment Operator called" << std::endl;
+	if (this != &brain) {
+		for (size_t i = 0; i < IDEAS_MAX; i++)
+		{
+			this->ideas[i] = brain.ideas[i];
+		}
+	}
+	return (*this);
 }
 
 std::string	Brain::comeToIdea(const int& index) const {

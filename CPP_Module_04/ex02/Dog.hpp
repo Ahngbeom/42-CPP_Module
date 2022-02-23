@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 10:25:09 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/15 12:02:54 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/23 23:59:45 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,11 @@ private:
 	Brain*	brain;
 public:
 	Dog();
+	Dog(const Dog& dog);
 	~Dog();
 
+	Dog&	operator=(const Dog& dog);
+	
 	void	makeSound( void ) const;
 	void	getIdea(const int& index) const;
 };
