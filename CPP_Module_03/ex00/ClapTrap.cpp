@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 19:52:43 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/10 15:30:12 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/23 12:31:42 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,27 @@ ClapTrap::ClapTrap(std::string name) \
 	std::cout << "Name constructor called" << std::endl;
 }
 
+ClapTrap::ClapTrap(const ClapTrap& ct) {
+	std::cout << "Copy Constructor called" << std::endl;
+	*this = ct;
+}
+
 ClapTrap::~ClapTrap()
 {
 	std::cout << "Deconstructor called" << std::endl;
 }
+
+ClapTrap&	ClapTrap::operator=(const ClapTrap ct) {
+	std::cout << "Assignment Operator overloading" << std::endl;
+	if (this != &ct) {
+		this->name = ct.name;
+		this->hitPoints = ct.hitPoints;
+		this->energyPoints = ct.energyPoints;
+		this->attackDamage = ct.attackDamage;
+	}
+	return (*this);
+}
+
 
 void ClapTrap::attack(std::string const & target) {
 	std::cout << "ClapTrap < " << this->name << \
