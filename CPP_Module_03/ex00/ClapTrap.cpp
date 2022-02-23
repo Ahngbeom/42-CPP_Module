@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 19:52:43 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/23 12:31:42 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/23 13:05:14 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ ClapTrap::~ClapTrap()
 	std::cout << "Deconstructor called" << std::endl;
 }
 
-ClapTrap&	ClapTrap::operator=(const ClapTrap ct) {
+ClapTrap&	ClapTrap::operator=(const ClapTrap& ct) {
 	std::cout << "Assignment Operator overloading" << std::endl;
 	if (this != &ct) {
 		this->name = ct.name;
