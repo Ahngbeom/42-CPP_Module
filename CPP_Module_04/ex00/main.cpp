@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 23:20:46 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/11 21:53:16 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/23 21:40:29 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,24 @@ int main()
 	delete i;
 	delete j;
 	delete meta;
+
+	std::cout << std::endl;
+
+	/*
+		[Static Binding vs Dynamic Binding] Comparison TEST
+	*/
+	{
+		const Animal	meta = Animal();
+		const Animal	j = Dog();
+		const Animal	i = Cat();
+		
+		std::cout << j.getType() << " " << std::endl;
+		std::cout << i.getType() << " " << std::endl;
+		std::cout << meta.getType() << " " << std::endl;
+
+		i.makeSound();
+		j.makeSound();
+		meta.makeSound();
+	}
 	return 0;
 }
