@@ -6,28 +6,40 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 19:52:43 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/10 15:56:27 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/23 13:42:13 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap()
-{
-	std::cout << "[ClapTrap] Default constructor called" << std::endl;
-}
-
 ClapTrap::ClapTrap(std::string name) \
 	: name(name), hitPoints(10), energyPoints(10), attackDamage(0)
 {
-	std::cout << "[ClapTrap] Name constructor called" << std::endl;
+	std::cout << "[ClapTrap - " << name << "] Default & Name constructor called" << std::endl;
 	this->displayAttributes();
+}
+
+ClapTrap::ClapTrap(const ClapTrap& ct) {
+	*this = ct;
+	std::cout << "[ClapTrap - " << name << "] Copy constructor called" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "[ClapTrap] Deconstructor called" << std::endl;
+	std::cout << "[ClapTrap - " << name << "] Deconstructor called" << std::endl;
 }
+
+ClapTrap&	ClapTrap::operator=(const ClapTrap& ct) {
+	if (this != &ct) {
+		this->name = ct.name;
+		this->hitPoints = ct.hitPoints;
+		this->energyPoints = ct.energyPoints;
+		this->attackDamage = ct.attackDamage;
+	}
+	std::cout << "[ClapTrap - " << name << "] Assignment operator overloading" << std::endl;
+	return (*this);
+}
+
 
 void	ClapTrap::displayAttributes( void ) {
 	std::cout << "Name : " << name << std::endl;

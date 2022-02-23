@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 19:52:33 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/10 17:48:44 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/23 15:32:11 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 
 int main( void )
 {
-	ClapTrap	clap("CLAP");
-	ScavTrap	scav("SCAV");
-	FragTrap	frag("FRAG");
-	DiamondTrap	diamond("DIAMOND");
+	ClapTrap	clap("CLAP"); std::cout << std::endl;
+	ScavTrap	scav("SCAV"); std::cout << std::endl;
+	FragTrap	frag("FRAG"); std::cout << std::endl;
+	DiamondTrap	diamond("DIAMOND"); std::cout << std::endl;
 
 	std::cout << "========================= FIGHT ============================" << std::endl;
 
@@ -37,9 +37,9 @@ int main( void )
 
 	scav.guardGate();
 
-	diamond.attack("frag");
+	diamond.attack("FRAG");
 	frag.takeDamage(diamond.getAttackDamage());
-	diamond.attack("scav");
+	diamond.attack("SCAV");
 	scav.takeDamage(diamond.getAttackDamage());
 	
 	diamond.whoAmI();

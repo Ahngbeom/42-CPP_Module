@@ -6,21 +6,15 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 17:29:37 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/09 18:57:46 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/23 14:30:57 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap()
+FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
-	std::cout << "[FragTrap] Default constructor called" << std::endl;
-}
-
-FragTrap::FragTrap(std::string name)
-{
-	std::cout << "[FragTrap] Name constructor called" << std::endl;
-	this->name = name;
+	std::cout << "[FragTrap] Default & Name constructor called" << std::endl;
 	hitPoints = 100;
 	energyPoints = 100;
 	attackDamage = 30;
@@ -43,5 +37,6 @@ void 	FragTrap::highFivesGuys(void) {
 	std::cout << "FragTrap < " << this->name << \
 				" > High Fives Guys~" << \
 				std::endl;
+	energyPoints -= 1;
 }
 

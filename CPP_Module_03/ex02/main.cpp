@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 19:52:33 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/09 18:52:30 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/23 15:00:50 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 
 int main( void )
 {
-	ClapTrap	clap("CLAP");
-	ScavTrap	scav("SCAV");
-	FragTrap	frag("FRAG");
+	ClapTrap	clap("CLAP"); std::cout << std::endl;
+	ScavTrap	scav("SCAV"); std::cout << std::endl;
+	FragTrap	frag("FRAG"); std::cout << std::endl;
 
 	std::cout << "========================= FIGHT ============================" << std::endl;
 

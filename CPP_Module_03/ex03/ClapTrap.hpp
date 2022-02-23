@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 19:52:50 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/09 19:55:56 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/23 15:03:43 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,16 @@
 class ClapTrap
 {
 protected:
-	std::string	name;			// 이름
-	int			hitPoints;		// 체력
-	int			energyPoints;	// ???
-	int			attackDamage;	// 공격력, 공격 피해량
+	std::string	name;	
+	int			hitPoints;
+	int			energyPoints;
+	int			attackDamage;
 public:
-	ClapTrap();
 	ClapTrap(std::string name);
+	ClapTrap(const ClapTrap& ct);
 	~ClapTrap();
+
+	ClapTrap&	operator=(const ClapTrap& ct);
 
 	void		displayAttributes( void );
 	std::string	getName( void );

@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 20:14:05 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/10 17:02:44 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/23 15:28:51 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,13 @@
 
 class ScavTrap : virtual public ClapTrap
 {
-private:
-
 public:
-	ScavTrap();
 	ScavTrap(std::string name);
 	~ScavTrap();
-	void 	guardGate();
+	
 	void	attack(std::string const & target);
+	
+	void 	guardGate();
 };
 
 #endif
