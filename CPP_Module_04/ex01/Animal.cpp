@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 10:24:14 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/23 22:44:52 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/23 23:21:23 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ Animal::Animal(const Animal& animal) {
 	*this = animal;
 }
 
-
 Animal::~Animal()
 {
 	std::cout << "[Animal] Deconstructor called" << std::endl;
@@ -35,7 +34,6 @@ Animal&	Animal::operator=(const Animal& animal) {
 	}
 	return (*this);
 }
-
 
 std::string	Animal::getType() const{
 	return (type);
