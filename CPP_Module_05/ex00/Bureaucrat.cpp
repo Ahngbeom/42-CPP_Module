@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 22:30:47 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/18 00:51:39 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/24 23:57:49 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ Bureaucrat::GradeTooHighException::GradeTooHighException(std::string error) : _e
 	// std::cout << "[GradeTooHighException] Constructor called" << std::endl;
 }
 
-Bureaucrat::GradeTooHighException::~GradeTooHighException() _GLIBCXX_NOTHROW {
+Bureaucrat::GradeTooHighException::~GradeTooHighException() _NOEXCEPT {
 	std::cout << ")" << std::endl;
 	// std::cout << "[GradeTooHighException] Deconstructor called" << std::endl;
 }
@@ -99,7 +99,7 @@ Bureaucrat::GradeTooLowException::GradeTooLowException(std::string error) : _err
 	// std::cout << "[GradeTooLowException] Constructor called" << std::endl;
 }
 
-Bureaucrat::GradeTooLowException::~GradeTooLowException() _GLIBCXX_NOTHROW {
+Bureaucrat::GradeTooLowException::~GradeTooLowException() _NOEXCEPT {
 	std::cout << ")" << std::endl;
 	// std::cout << "[GradeTooLowException] Deconstructor called" << std::endl;
 }
