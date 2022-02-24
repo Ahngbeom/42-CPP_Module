@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 15:05:43 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/15 21:09:29 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/24 15:00:57 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ protected:
 public:
 	AMateria();
 	AMateria(std::string const & type);
+	AMateria(const AMateria& mater);
 	virtual ~AMateria();
+
+	AMateria&	operator=(const AMateria& mater);
 
 	std::string const & getType() const; //Returns the materia type
 	virtual AMateria* clone() const = 0;

@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 15:12:46 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/15 22:14:21 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/24 17:04:57 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,19 +54,24 @@ int main()
 		bug->equip(src->createMateria("ice"));
 		_42Seoul->equip(src->createMateria("cure"));
 		
-		bug->use(0, *bahn);
 		bahn->use(0, *bug);
+		bahn->use(1, *bug);
+		bahn->use(2, *bug);
+		bahn->use(3, *bug);
+		bahn->use(4, *bug); // Index Out of Bounds.
+
+		std::cout << std::endl;
+		
 		bug->use(0, *bahn);
 		bahn->use(0, *bug);
 		_42Seoul->use(0, *bahn);
-		bahn->use(1, *bahn);
+		bahn->use(1, *_42Seoul);
 		
-		bahn->unequip(1);
-		bahn->use(1, *bahn);
-		bahn->use(4, *bahn);
+		bahn->unequip(0); // Must Nothing Works.
+		bahn->use(0, *bug);
 
-		delete src;
 		delete bahn;
+		delete src;
 		delete bug;
 		delete _42Seoul;
 	}

@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 16:30:52 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/15 21:17:56 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/24 16:36:00 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 MateriaSource::MateriaSource()
 {
 	// std::cout << "MateriaSource Constructor called" << std::endl;
-	for (size_t i = 0; i < sizeof(srcs) / sizeof(AMateria*); i++)
+	for (size_t i = 0; i < AMATERIA_MAX; i++)
 	{
 		srcs[i] = NULL;
 	}
@@ -24,7 +24,7 @@ MateriaSource::MateriaSource()
 MateriaSource::~MateriaSource()
 {
 	// std::cout << "MateriaSource Constructor called" << std::endl;
-	for (size_t i = 0; i < sizeof(srcs) / sizeof(AMateria*); i++)
+	for (size_t i = 0; i < AMATERIA_MAX; i++)
 	{
 		delete srcs[i];
 	}
