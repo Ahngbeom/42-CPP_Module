@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 22:28:23 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/24 23:57:27 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/25 00:05:19 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,8 @@
 # include <iostream>
 # include <exception>
 
-# ifndef Linux
+# ifdef __linux__
 	# define _NOEXCEPT _GLIBCXX_NOTHROW
-# else
-	# define _NOEXCEPT NOEXCEPT
 # endif
 
 class Bureaucrat
