@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 13:42:50 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/18 14:33:38 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/25 15:38:56 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@
 # include <exception>
 # include "Bureaucrat.hpp"
 
+# ifdef	__linux__
+	# define _NOEXCEPT _GLIBCXX_USE_NOEXCEPT
+# endif
+
 class Bureaucrat;
 
 class Form
@@ -24,7 +28,6 @@ class Form
 private:
 	const std::string	_name;
 	bool				_signed;
-	// bool				_executed;
 	const int			_signGrade;
 	const int			_executeGrade;
 public:
@@ -37,7 +40,6 @@ public:
 	bool	getSigned( void ) const ;
 	
 	void	beSigned(Bureaucrat& bureau);
-	// void	beExecuted(Bureaucrat& bureau);
 
 	virtual void	execute(Bureaucrat const & executor) = 0;
 
@@ -46,8 +48,8 @@ public:
 			std::string	_error;
 		public:
 			GradeTooHighException(std::string error);
-			~GradeTooHighException() _GLIBCXX_NOTHROW;
-			virtual const char* what() const throw();
+			~GradeTooHighException() _NOEXCEPT;
+			virtual const char* what() const _NOEXCEPT;
 	};
 	
 	class GradeTooLowException : public std::exception {
@@ -55,8 +57,8 @@ public:
 			std::string	_error;
 		public:
 			GradeTooLowException(std::string error);
-			~GradeTooLowException() _GLIBCXX_NOTHROW;
-			virtual const char* what() const throw();
+			~GradeTooLowException() _NOEXCEPT;
+			virtual const char* what() const _NOEXCEPT;
 	};
 	
 };

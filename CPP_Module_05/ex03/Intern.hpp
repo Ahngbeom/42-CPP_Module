@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 15:40:01 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/18 20:54:05 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/25 15:41:38 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,8 @@ public:
 		std::string _error;
 	public:
 		NotMatchTheForm();
-		~NotMatchTheForm() _GLIBCXX_NOTHROW;
-		
-		virtual const char*	what() const _GLIBCXX_NOTHROW;
+		~NotMatchTheForm() _NOEXCEPT;
+		virtual const char*	what() const _NOEXCEPT;
 	};
 };
 

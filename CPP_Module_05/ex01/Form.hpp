@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 13:42:50 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/17 23:49:02 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/25 15:39:19 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@
 # include <iostream>
 # include <exception>
 # include "Bureaucrat.hpp"
+
+# ifdef	__linux__
+	# define _NOEXCEPT _GLIBCXX_USE_NOEXCEPT
+# endif
 
 class Bureaucrat;
 
@@ -42,8 +46,8 @@ public:
 			std::string	_error;
 		public:
 			GradeTooHighException(std::string error);
-			~GradeTooHighException() _GLIBCXX_NOTHROW;
-			virtual const char* what() const throw();
+			~GradeTooHighException() _NOEXCEPT;
+			virtual const char* what() const _NOEXCEPT;
 	};
 	
 	class GradeTooLowException : public std::exception {
@@ -51,8 +55,8 @@ public:
 			std::string	_error;
 		public:
 			GradeTooLowException(std::string error);
-			~GradeTooLowException() _GLIBCXX_NOTHROW;
-			virtual const char* what() const throw();
+			~GradeTooLowException() _NOEXCEPT;
+			virtual const char* what() const _NOEXCEPT;
 	};
 	
 };

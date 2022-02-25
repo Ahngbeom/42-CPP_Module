@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 22:28:23 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/25 12:32:07 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/25 15:39:32 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ public:
 		public:
 			GradeTooHighException(std::string error);
 			~GradeTooHighException() _NOEXCEPT;
-			virtual const char* what() const throw();
+			virtual const char* what() const _NOEXCEPT;
 	};
 	
 	class GradeTooLowException : public std::exception {
@@ -53,7 +53,7 @@ public:
 		public:
 			GradeTooLowException(std::string error);
 			~GradeTooLowException() _NOEXCEPT;
-			virtual const char* what() const throw();
+			virtual const char* what() const _NOEXCEPT;
 	};
 	
 };

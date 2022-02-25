@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 22:46:22 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/18 00:48:19 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/25 15:39:22 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,11 +67,11 @@ Form::GradeTooHighException::GradeTooHighException(std::string error) : _error(e
 
 }
 
-Form::GradeTooHighException::~GradeTooHighException() _GLIBCXX_NOTHROW {
+Form::GradeTooHighException::~GradeTooHighException() _NOEXCEPT {
 	
 }
 
-const char* Form::GradeTooHighException::what() const throw() {
+const char* Form::GradeTooHighException::what() const _NOEXCEPT {
 	return (_error.c_str());
 }
 
@@ -80,11 +80,11 @@ Form::GradeTooLowException::GradeTooLowException(std::string error) : _error(err
 	
 }
 		
-Form::GradeTooLowException::~GradeTooLowException() _GLIBCXX_NOTHROW {
+Form::GradeTooLowException::~GradeTooLowException() _NOEXCEPT {
 	
 }
 
-const char* Form::GradeTooLowException::what() const throw() {
+const char* Form::GradeTooLowException::what() const _NOEXCEPT {
 	return (_error.c_str());
 }
 

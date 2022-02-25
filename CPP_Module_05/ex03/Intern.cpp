@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 15:40:01 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/18 22:28:59 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/25 15:44:55 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,14 @@ Intern::~Intern()
 }
 
 Form*	Intern::makeForm(std::string const & targetForm, std::string const & formName) {
-	std::string	formList[] = {
+	std::string	formList[3] = {
 		"shrubbery creation",
 		"robotomy request",
 		"presidential pardon"
 	};
-	std::size_t formListSize(sizeof(formList) / sizeof(std::string));
-	size_t 		i;
 	
-	for (i = 0; i < formListSize; i++)
+	size_t 		i;
+	for (i = 0; i < 3; i++)
 	{
 		if (!targetForm.compare(formList[i]))
 			break ;
@@ -61,10 +60,10 @@ Intern::NotMatchTheForm::NotMatchTheForm()
 {
 }
 
-Intern::NotMatchTheForm::~NotMatchTheForm() _GLIBCXX_NOTHROW {
+Intern::NotMatchTheForm::~NotMatchTheForm() _NOEXCEPT {
 	
 }
 
-const char*	Intern::NotMatchTheForm::what() const _GLIBCXX_NOTHROW {
+const char*	Intern::NotMatchTheForm::what() const _NOEXCEPT {
 	return (_error.c_str());
 }

@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 22:28:17 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/18 00:49:56 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/25 13:43:15 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int main()
 {
 	{
+		/* When signGrade of Form is too high */
 		try
 		{
 			Form	form = Form("Form", 0, 100);
@@ -29,6 +30,7 @@ int main()
 	std::cout << std::endl;
 
 	{
+		/* When executeGrade of Form is too low */
 		try
 		{
 			Form	form = Form("Form", 5, 199);
@@ -43,6 +45,7 @@ int main()
 	std::cout << std::endl;
 	
 	{
+		/* When grade of Bureaucrat is too high */
 		try
 		{
 			Form	form = Form("Form", 100, 100);

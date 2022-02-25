@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 22:30:47 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/25 12:32:17 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/25 15:39:37 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ Bureaucrat::GradeTooHighException::~GradeTooHighException() _NOEXCEPT {
 	// std::cout << "[GradeTooHighException] Deconstructor called" << std::endl;
 }
 
-const char* Bureaucrat::GradeTooHighException::what() const throw() {
+const char* Bureaucrat::GradeTooHighException::what() const _NOEXCEPT {
 	return (_error.c_str());
 }
 
@@ -104,7 +104,7 @@ Bureaucrat::GradeTooLowException::~GradeTooLowException() _NOEXCEPT {
 	// std::cout << "[GradeTooLowException] Deconstructor called" << std::endl;
 }
 
-const char* Bureaucrat::GradeTooLowException::what() const throw() {
+const char* Bureaucrat::GradeTooLowException::what() const _NOEXCEPT {
 	return (_error.c_str());
 }
 
