@@ -6,7 +6,7 @@
 #    By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/13 22:24:07 by bahn              #+#    #+#              #
-#    Updated: 2022/02/18 14:44:15 by bahn             ###   ########.fr        #
+#    Updated: 2022/02/25 16:15:31 by bahn             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ all : $(NAME)
 
 $(NAME) : $(OBJS)
 	$(CXX) $(CXXFLAGS) $(INCFLAGS) $^ -o $@
-	@ tabs 4
+	@ tabs -4
 
 clean : 
 	$(RM) $(OBJS)
