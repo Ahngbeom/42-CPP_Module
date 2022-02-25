@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 22:28:23 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/25 00:05:19 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/25 12:32:07 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define BUREAUCRAT_HPP
 
 # include <iostream>
+# include <string>
 # include <exception>
 
 # ifdef __linux__
@@ -27,10 +28,12 @@ private:
 	int					_grade;
 public:
 	Bureaucrat(std::string name, int grade);
+	Bureaucrat(const Bureaucrat& bureau);
 	~Bureaucrat();
 
-	std::string	getName();
-	int			getGrade();
+
+	std::string			getName();
+	int					getGrade();
 
 	void	incrementTheGrade(std::size_t amount);
 	void	decrementTheGrade(std::size_t amount);

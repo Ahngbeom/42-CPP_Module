@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 22:28:17 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/14 17:16:57 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/25 12:49:20 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int main()
 	Bureaucrat granit("Granit", 199);
 
 	std::cout << std::endl;
+	
 	std::cout << "[Bureaucrat Grade]" << std::endl;
 	std::cout << aaron;
 	std::cout << emile;
@@ -29,6 +30,7 @@ int main()
 	std::cout << granit;
 
 	std::cout << std::endl;
+	
 	aaron.decrementTheGrade(1);
 	emile.incrementTheGrade(10);
 	bukayo.decrementTheGrade(100);
@@ -36,6 +38,7 @@ int main()
 	granit.incrementTheGrade(granit.getGrade() % 150);
 	
 	std::cout << std::endl;
+	
 	std::cout << "[Bureaucrat Grade]" << std::endl;
 	std::cout << aaron;
 	std::cout << emile;
@@ -44,5 +47,6 @@ int main()
 	std::cout << granit;
 	
 	std::cout << std::endl;
+	
 	return 0;
 }
