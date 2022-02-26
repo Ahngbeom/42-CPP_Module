@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 12:13:02 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/20 22:12:06 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/27 00:11:51 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,17 @@
 #include "ABC.hpp"
 
 Base * generate(void) {
-	
 	while (true) {
 		switch (rand() % 3)
 		{
 		case 0:
-			return (new A());
+			return (new A('A'));
 		case 1:
-			return (new B());
+			return (new B('B'));
 		case 2:
-			return (new C());
-		default:
-			continue ;
+			return (new C('C'));
 		}
 	}
-	return NULL;
 }
 
 void identify(Base* p) {
@@ -56,28 +52,42 @@ int main()
 {
 	std::srand((unsigned int)time(NULL));
 
-	Base*	random = generate();
+	{
+		std::cout << "Base Pointer TEST" << std::endl;
+		
+		Base*	ptr_base = generate(); 
+		
+		std::cout << "TYPE : " << ptr_base->getType() << std::endl;
+		std::cout << "dynamic_cast : ";
+		identify(ptr_base); delete ptr_base; ptr_base = generate();
 
-	identify(random);
-	identify(*random);
+		std::cout << "TYPE : " << ptr_base->getType() << std::endl;
+		std::cout << "dynamic_cast : ";
+		identify(ptr_base); delete ptr_base; ptr_base = generate();
 
-	delete random;
-	random = generate();
-	identify(random);
+		std::cout << "TYPE : " << ptr_base->getType() << std::endl;
+		std::cout << "dynamic_cast : ";
+		identify(ptr_base); delete ptr_base;
+	}
 	
-	delete random;
-	random = generate();
-	identify(random);
-	
-	delete random;
-	random = generate();
-	identify(*random);
+	std::cout << std::endl;
 
-	delete random;
-	random = generate();
-	identify(*random);
-	
-	delete random;
-	
+	{
+		std::cout << "Base Reference TEST" << std::endl;
+		
+		Base*	ref_base = generate();
+		
+		std::cout << "TYPE : " << ref_base->getType() << std::endl;
+		std::cout << "dynamic_cast : ";
+		identify(*ref_base); delete ref_base; ref_base = generate();
+		
+		std::cout << "TYPE : " << ref_base->getType() << std::endl;
+		std::cout << "dynamic_cast : ";
+		identify(*ref_base); delete ref_base; ref_base = generate();
+		
+		std::cout << "TYPE : " << ref_base->getType() << std::endl;
+		std::cout << "dynamic_cast : ";
+		identify(*ref_base); delete ref_base;
+	}
 	return 0;
 }

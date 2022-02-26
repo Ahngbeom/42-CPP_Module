@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 12:13:02 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/19 22:39:45 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/26 12:26:35 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,10 @@ void	outputCharacter(double& num) {
 
 		if (std::isnan(num))
 			throw "impossible";
-		else if (num < INT_MIN || num > INT_MAX)
-			throw "impossible";
 		else if (!std::isprint(num))
 			throw "Non displayable";
-		std::cout << "'" << static_cast<char>(num) << "'" << std::endl;
+		else 
+			std::cout << "'" << static_cast<char>(num) << "'" << std::endl;
 	}
 	catch(char const* message)
 	{
@@ -103,21 +102,19 @@ int main(int argc, char const *argv[])
 	{
 		if (argc != 2)
 			throw InvalidArguments();
+		
+		double		num = std::atof(argv[1]);
+
+		std::cout << std::fixed;
+
+		outputCharacter(num);
+		outputInteger(num);
+		outputFloat(num);
+		outputDouble(num);
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
-		return 1;
 	}
-
-	double		num = std::atof(argv[1]);
-
-	std::cout << std::fixed;
-
-	outputCharacter(num);
-	outputInteger(num);
-	outputFloat(num);
-	outputDouble(num);
-
 	return 0;
 }
