@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 14:20:42 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/28 15:35:31 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/28 18:43:59 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ PresidentialPardonForm&	PresidentialPardonForm::operator=(const PresidentialPard
 	return (*dynamic_cast<PresidentialPardonForm*>(&Form::operator=(form)));
 }
 
-void	PresidentialPardonForm::execute(Bureaucrat const & executer) {
+void	PresidentialPardonForm::execute(Bureaucrat const & executer) const {
 	if (executer.getGrade() < 1)
 		throw GradeTooHighException("a grade required for executing is too high.");
 	else if (executer.getGrade() > getExecuteGrade())

@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 18:05:39 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/28 15:37:51 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/28 18:43:33 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 	return (*dynamic_cast<ShrubberyCreationForm*>(&Form::operator=(form)));
 }
 
-void	ShrubberyCreationForm::execute(Bureaucrat const & executer) {
+void	ShrubberyCreationForm::execute(Bureaucrat const & executer) const {
 	if (executer.getGrade() < 1)
 		throw GradeTooHighException("a grade required for executing is too high.");
 	else if (executer.getGrade() > getExecuteGrade())

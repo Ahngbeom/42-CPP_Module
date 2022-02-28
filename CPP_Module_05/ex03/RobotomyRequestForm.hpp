@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 12:09:22 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/28 15:34:45 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/28 18:43:43 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ public:
 
 	RobotomyRequestForm& operator=(const RobotomyRequestForm& form);
 
-	virtual void	execute(Bureaucrat const & executer);
+	virtual void	execute(Bureaucrat const & executer) const ;
 };
 
 #endif

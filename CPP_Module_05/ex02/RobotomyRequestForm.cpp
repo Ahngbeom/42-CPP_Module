@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 12:10:13 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/28 15:36:23 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/28 18:43:49 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& f
 	return (*dynamic_cast<RobotomyRequestForm*>(&Form::operator=(form)));
 }
 
-void	RobotomyRequestForm::execute(Bureaucrat const & executer) {
+void	RobotomyRequestForm::execute(Bureaucrat const & executer) const {
 	if (executer.getGrade() < 1)
 		throw GradeTooHighException("a grade required for executing is too high.");
 	else if (executer.getGrade() > getExecuteGrade())

@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 22:28:23 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/28 01:23:21 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/28 18:41:46 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <iostream>
 # include <exception>
-# include "Form.hpp"
 
 class Form;
 
@@ -41,6 +40,6 @@ public:
 	void	decrementTheGrade(std::size_t amount);
 };
 
-std::ostream&	operator<<(std::ostream& ostrm, Bureaucrat& bureau);
+std::ostream&	operator<<(std::ostream& ostrm, Bureaucrat const & bureau);
 
 #endif

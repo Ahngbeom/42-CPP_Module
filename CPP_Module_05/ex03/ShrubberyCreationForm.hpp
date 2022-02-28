@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 18:05:40 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/28 15:36:50 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/28 18:43:29 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ public:
 
 	ShrubberyCreationForm& operator=(const ShrubberyCreationForm& form);
 
-	virtual void	execute(Bureaucrat const & executer);
+	virtual void	execute(Bureaucrat const & executer) const ;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 13:42:50 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/28 01:22:06 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/28 18:46:22 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ public:
 	
 	void	beSigned(Bureaucrat& bureau);
 
-	virtual void	execute(Bureaucrat const & executor) = 0;
+	virtual void	execute(Bureaucrat const & executor) const = 0;
 
 	class GradeTooHighException : public std::exception {
 		private:
@@ -66,6 +66,6 @@ public:
 	
 };
 
-std::ostream&	operator<<(std::ostream& ostrm, Form& form);
+std::ostream&	operator<<(std::ostream& ostrm, Form const & form);
 
 #endif

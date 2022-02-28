@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 22:46:22 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/28 01:56:31 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/28 18:47:02 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ Form&	Form::operator=(const Form& form) {
 				throw GradeTooLowException("Standard grade required for execution is too low.");
 		}
 	}
-	
 	return (*this);
 }
 

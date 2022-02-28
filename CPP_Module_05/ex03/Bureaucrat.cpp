@@ -6,11 +6,12 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 22:30:47 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/28 01:22:50 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/28 18:48:03 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : \
 	_name(name), _grade(grade)
@@ -64,18 +65,16 @@ void	Bureaucrat::signForm(Form& form) const {
 }
 
 void	Bureaucrat::executeForm(Form const & form) const {
-	Bureaucrat*	bureau = const_cast<Bureaucrat*>(this);
-	Form*		_form = const_cast<Form*>(&form);
 	try
 	{
-		_form->execute(*bureau);
+		form.execute(*this);
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << *bureau << " cannot execute " << (*_form) << " because " << e.what() << std::endl;
+		std::cerr << *this << " cannot execute " << form << " because " << e.what() << std::endl;
 		return ;
 	}
-	std::cout << *bureau << " executes " << (*_form) << std::endl;
+	std::cout << *this << " executes " << form << std::endl;
 }
 
 void	Bureaucrat::incrementTheGrade(std::size_t amount) {
@@ -86,7 +85,7 @@ void	Bureaucrat::decrementTheGrade(std::size_t amount) {
 	_grade += amount;
 }
 
-std::ostream&	operator<<(std::ostream& ostrm, Bureaucrat& bureau) {
+std::ostream&	operator<<(std::ostream& ostrm, Bureaucrat const & bureau) {
 	ostrm << "<" + bureau.getName() + ">";
 	return (ostrm);
 }

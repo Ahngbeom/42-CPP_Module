@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 22:46:22 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/28 01:56:39 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/28 18:46:46 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,7 +136,7 @@ const char* Form::GradeTooLowException::what() const _NOEXCEPT {
 	return (_error.c_str());
 }
 
-std::ostream&	operator<<(std::ostream& ostrm, Form& form) {
+std::ostream&	operator<<(std::ostream& ostrm, Form const & form) {
 	ostrm << "<" + form.getName() + ">";
 	return (ostrm);
 }
