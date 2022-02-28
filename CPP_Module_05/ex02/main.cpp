@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 22:28:17 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/18 15:39:16 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/28 01:54:44 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,23 @@ int main()
 	Form*	Home = new ShrubberyCreationForm("Home");
 	Form*	Car = new RobotomyRequestForm("Car");
 	Form*	Bane = new PresidentialPardonForm("Bane");
-	
+
 	Bureaucrat Me("bahn", 140);
 	
 	std::cout << "======================================================================================" << std::endl;
 	
+	{
+		std::cout << "TEST #0 (Copy & Assignment)" << std::endl;
+		PresidentialPardonForm*	origin = new PresidentialPardonForm("Origin");
+		PresidentialPardonForm	copy(*origin);
+
+		std::cout << *origin << std::endl;
+		std::cout << copy << std::endl;
+
+		delete origin;
+		std::cout << "======================================================================================" << std::endl;
+	}
+
 	{
 		std::cout << "TEST #1 (Executer Grade : " << Me.getGrade() << ")" << std::endl;
 		std::cout << "1 : \n"; Me.executeForm(*Home);

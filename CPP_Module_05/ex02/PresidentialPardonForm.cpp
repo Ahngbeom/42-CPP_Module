@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 14:20:42 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/18 14:59:07 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/28 15:35:31 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,17 @@ PresidentialPardonForm::PresidentialPardonForm(std::string const & target)
 {
 }
 
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& form) 
+ : Form(form.getName(), form.getSignGrade(), form.getExecuteGrade()) 
+{
+}
+
 PresidentialPardonForm::~PresidentialPardonForm()
 {
+}
+
+PresidentialPardonForm&	PresidentialPardonForm::operator=(const PresidentialPardonForm& form) {
+	return (*dynamic_cast<PresidentialPardonForm*>(&Form::operator=(form)));
 }
 
 void	PresidentialPardonForm::execute(Bureaucrat const & executer) {

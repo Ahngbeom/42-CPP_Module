@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 22:28:23 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/18 01:45:14 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/28 01:23:21 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@ private:
 	int					_grade;
 public:
 	Bureaucrat(std::string name, int grade);
+	Bureaucrat(const Bureaucrat& bureau);
 	~Bureaucrat();
+
+	Bureaucrat&	operator=(const Bureaucrat& bureau);
 
 	std::string	getName() const ;
 	int			getGrade() const ;

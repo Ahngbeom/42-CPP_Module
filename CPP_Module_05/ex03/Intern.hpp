@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 15:40:01 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/25 15:41:38 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/28 16:00:53 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,13 @@
 class Intern
 {
 private:
-	
+	static	std::string	forms[3];
 public:
 	Intern();
+	Intern(const Intern& intern);
 	~Intern();
+
+	Intern& operator=(const Intern& intern);
 
 	Form*	makeForm(std::string const & targetForm, std::string const & formName);
 

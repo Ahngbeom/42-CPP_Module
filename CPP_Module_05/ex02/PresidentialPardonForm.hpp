@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 14:18:55 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/18 14:28:26 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/28 01:28:37 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@ private:
 	
 public:
 	PresidentialPardonForm(std::string const & target);
+	PresidentialPardonForm(const PresidentialPardonForm& form);
 	~PresidentialPardonForm();
+
+	PresidentialPardonForm&	operator=(const PresidentialPardonForm& form);
 
 	virtual void	execute(Bureaucrat const & executer);
 };

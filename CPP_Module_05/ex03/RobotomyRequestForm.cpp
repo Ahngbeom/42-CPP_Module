@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 12:10:13 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/18 14:45:53 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/28 15:36:23 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,18 @@ RobotomyRequestForm::RobotomyRequestForm(std::string const & target)
 	std::srand((unsigned int)time(NULL));
 }
 
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& form)
+ : Form(form.getName(), form.getSignGrade(), form.getExecuteGrade()) 
+{
+	
+}
+
 RobotomyRequestForm::~RobotomyRequestForm()
 {
+}
+
+RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& form) {
+	return (*dynamic_cast<RobotomyRequestForm*>(&Form::operator=(form)));
 }
 
 void	RobotomyRequestForm::execute(Bureaucrat const & executer) {

@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 22:30:47 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/25 15:39:37 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/28 01:09:32 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,29 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : \
 	}
 }
 
+Bureaucrat::Bureaucrat(const Bureaucrat& bureau) : _name(bureau.getName()), _grade(bureau.getGrade()) {
+	std::cout << "[Bureaucrat] Copy Constructor called" << std::endl;
+}
+
 Bureaucrat::~Bureaucrat()
 {
 	std::cout << "[Bureaucrat] Deconstructor called" << std::endl;
 }
 
-std::string	Bureaucrat::getName() {
+Bureaucrat&	Bureaucrat::operator=(const Bureaucrat& bureau) {
+	std::cout << "[Bureaucrat] Assignment Operator called" << std::endl;
+	if (this != &bureau) {
+		*const_cast<std::string*>(&this->_name) = bureau.getName();
+		this->_grade = bureau.getGrade();
+	}
+	return (*this);
+}
+
+const std::string	Bureaucrat::getName() const {
 	return (_name);
 }
 
-int	Bureaucrat::getGrade() {
+int	Bureaucrat::getGrade() const {
 	return (_grade);
 }
 
@@ -117,8 +130,6 @@ std::ostream&	operator<<(std::ostream& ostrm, Bureaucrat& bureau) {
 			throw Bureaucrat::GradeTooLowException("Grade too low.");
 		else if (bureau.getGrade() < 1)
 			throw Bureaucrat::GradeTooHighException("Grade too high.");
-		else
-			std::cout << std::endl;
 	}
 	catch(const std::exception& e)
 	{

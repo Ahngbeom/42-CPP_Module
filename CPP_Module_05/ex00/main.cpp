@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 22:28:17 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/25 12:49:20 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/28 00:58:26 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,19 @@
 
 int main()
 {
+	{
+		/* Copy & Assignment TEST */
+		Bureaucrat origin("Origin", 50);
+		Bureaucrat copy(origin);
+		Bureaucrat assign = copy;
+
+		std::cout << origin << "<- " << &origin << std::endl;
+		std::cout << copy << "<- " << &copy << std::endl;
+		std::cout << assign << "<- " << &assign << std::endl;
+	}
+
+	std::cout << std::endl;
+
 	Bureaucrat aaron("Aaron", 0);
 	Bureaucrat emile("Emile", 1);
 	Bureaucrat bukayo("Bukayo", 2);

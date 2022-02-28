@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 18:05:39 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/18 14:41:02 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/28 15:37:51 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,17 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string const & target)
 {
 	
 }
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& form)
+ : Form(form.getName(), form.getSignGrade(), form.getExecuteGrade()) 
+{
+}
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
+}
+
+ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& form) {
+	return (*dynamic_cast<ShrubberyCreationForm*>(&Form::operator=(form)));
 }
 
 void	ShrubberyCreationForm::execute(Bureaucrat const & executer) {

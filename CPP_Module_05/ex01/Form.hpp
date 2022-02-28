@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 13:42:50 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/25 15:39:19 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/28 01:01:45 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,10 @@ private:
 	const int			_executeGrade;
 public:
 	Form(const std::string name, const int signGrade, const int executeGrade);
+	Form(const Form& form);
 	~Form();
+	
+	Form&	operator=(const Form& form);
 
 	std::string	getName( void ) const ;
 	int	getSignGrade( void ) const ;

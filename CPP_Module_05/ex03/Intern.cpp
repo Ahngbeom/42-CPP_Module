@@ -6,31 +6,42 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 15:40:01 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/25 15:44:55 by bahn             ###   ########.fr       */
+/*   Updated: 2022/02/28 16:20:01 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Intern.hpp"
 
+std::string	Intern::forms[3] = {
+	"shrubbery creation",
+	"robotomy request",
+	"presidential pardon"
+};
+
 Intern::Intern()
 {
+}
+
+Intern::Intern(const Intern& intern)
+{
+	*this = intern;
 }
 
 Intern::~Intern()
 {
 }
 
+Intern& Intern::operator=(const Intern& intern)
+{
+	(void)intern;
+	return (*this);
+}
+
 Form*	Intern::makeForm(std::string const & targetForm, std::string const & formName) {
-	std::string	formList[3] = {
-		"shrubbery creation",
-		"robotomy request",
-		"presidential pardon"
-	};
-	
 	size_t 		i;
 	for (i = 0; i < 3; i++)
 	{
-		if (!targetForm.compare(formList[i]))
+		if (!targetForm.compare(forms[i]))
 			break ;
 	}
 	
@@ -39,10 +50,13 @@ Form*	Intern::makeForm(std::string const & targetForm, std::string const & formN
 		switch (i)
 		{
 		case 0:
+			std::cout << "Intern creates <ShrubberyCreationForm>" << std::endl;
 			return (new ShrubberyCreationForm(formName));
 		case 1:
+			std::cout << "Intern creates <RobotomyRequestForm>" << std::endl;
 			return (new RobotomyRequestForm(formName));
 		case 2:
+			std::cout << "Intern creates <PresidentialPardonForm>" << std::endl;
 			return (new PresidentialPardonForm(formName));
 		default:
 			throw NotMatchTheForm();
