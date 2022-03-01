@@ -6,20 +6,17 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 12:13:02 by bahn              #+#    #+#             */
-/*   Updated: 2022/03/01 21:35:33 by bahn             ###   ########.fr       */
+/*   Updated: 2022/03/01 21:40:47 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include <iostream> // showpos
 #include <cstdlib> // strtod
-#include <cmath>
-#include <cstring>
-#include <limits>
+#include <cmath> // isnan, isinf, fmodf
+#include <cctype> // isprint
+#include <limits> // numeric_limits
 
 #include "InvalidArguments.hpp"
-
-#define INT_MAX 2147483647
-#define INT_MIN -2147483647 - 1
 
 void	outputCharacter(double& num) {
 	try
