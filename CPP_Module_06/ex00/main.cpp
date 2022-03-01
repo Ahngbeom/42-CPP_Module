@@ -6,13 +6,15 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 12:13:02 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/26 12:26:35 by bahn             ###   ########.fr       */
+/*   Updated: 2022/03/01 21:28:36 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <cstdlib>
+#include <cstdlib> // strtod
 #include <cmath>
+#include <cstring>
+#include <limits>
 
 #include "InvalidArguments.hpp"
 
@@ -24,7 +26,9 @@ void	outputCharacter(double& num) {
 	{
 		std::cout << "char: ";
 
-		if (std::isnan(num))
+		if (std::isnan(num) \
+			|| num < (double)std::numeric_limits<unsigned char>::min() \
+			|| num > (double)std::numeric_limits<unsigned char>::max())
 			throw "impossible";
 		else if (!std::isprint(num))
 			throw "Non displayable";
@@ -41,9 +45,9 @@ void	outputInteger(double& num) {
 	try
 	{
 		std::cout << "int: ";
-		if (std::isnan(num))
-			throw "impossible";
-		else if (num < INT_MIN || num > INT_MAX)		
+		if (std::isnan(num) \
+			|| num < std::numeric_limits<int>::min() \
+			|| num > std::numeric_limits<int>::max())		
 			throw "impossible";
 		else	
 			std::cout << static_cast<int>(num) << std::endl;
@@ -58,12 +62,9 @@ void	outputFloat(double& num) {
 	try
 	{
 		std::cout << "float: ";
-		if (std::isnan(num))
-			throw "nanf";
-		else if (num < __FLT_MIN__)
-			throw "-inff";
-		else if (num > __FLT_MAX__)
-			throw "+inff";
+		if (std::isinf(static_cast<float>(num))) {
+			std::cout << std::showpos;
+		}
 		if (fmodf(static_cast<float>(num), 1.0) == 0) {
 			std::cout.precision(1);
 		}
@@ -79,12 +80,9 @@ void	outputDouble(double& num) {
 	try
 	{
 		std::cout << "double: ";
-		if (std::isnan(num))
-			throw "nan";
-		else if (num < __DBL_MIN__)
-			throw "-inf";
-		else if (num > __DBL_MAX__)
-			throw "+inf";
+		if (std::isinf(static_cast<float>(num))) {
+			std::cout << std::showpos;
+		}
 		if (fmod(static_cast<double>(num), 1.0) == 0) {
 			std::cout.precision(1);
 		}
@@ -103,7 +101,7 @@ int main(int argc, char const *argv[])
 		if (argc != 2)
 			throw InvalidArguments();
 		
-		double		num = std::atof(argv[1]);
+		double	num = std::strtod(argv[1], NULL);
 
 		std::cout << std::fixed;
 

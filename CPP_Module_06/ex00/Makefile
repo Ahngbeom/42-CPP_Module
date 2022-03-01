@@ -6,11 +6,11 @@
 #    By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/19 12:10:42 by bahn              #+#    #+#              #
-#    Updated: 2022/02/19 12:22:13 by bahn             ###   ########.fr        #
+#    Updated: 2022/03/01 18:13:39 by bahn             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = a.out
+NAME = convert
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
