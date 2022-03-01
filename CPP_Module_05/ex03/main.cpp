@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 22:28:17 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/28 16:19:26 by bahn             ###   ########.fr       */
+/*   Updated: 2022/03/01 17:21:42 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,17 @@ int main()
 	Bureaucrat me("bahn", 140);
 
 	std::cout << "======================================================================================" << std::endl;
+	{	
+		std::cout << "TEST #0 (Copy & Assignment)" << std::endl;
+		Intern cloneCopy(someRandomIntern);
+		Intern cloneAssign = cloneCopy;
+
+		std::cout << &someRandomIntern << std::endl;
+		std::cout << &cloneCopy << std::endl;
+		std::cout << &cloneAssign << std::endl;
+		std::cout << "======================================================================================" << std::endl;
+	}
+	
 	{	
 		std::cout << "TEST #1 (Executer Grade : " << me.getGrade() << ")" << std::endl;
 		me.executeForm(*shrubbery);

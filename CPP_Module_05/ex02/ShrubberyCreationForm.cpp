@@ -6,11 +6,12 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 18:05:39 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/28 18:43:33 by bahn             ###   ########.fr       */
+/*   Updated: 2022/03/01 17:08:32 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
+#include "Bureaucrat.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string const & target)
  :	Form(target, 145, 137)
@@ -18,7 +19,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string const & target)
 	
 }
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& form)
- : Form(form.getName(), form.getSignGrade(), form.getExecuteGrade()) 
+ : Form(form) 
 {
 }
 
@@ -27,7 +28,9 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 }
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& form) {
-	return (*dynamic_cast<ShrubberyCreationForm*>(&Form::operator=(form)));
+	if (this != &form)
+		this->Form::operator=(form);
+	return (*this);
 }
 
 void	ShrubberyCreationForm::execute(Bureaucrat const & executer) const {

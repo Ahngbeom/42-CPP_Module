@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 18:05:40 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/28 18:43:29 by bahn             ###   ########.fr       */
+/*   Updated: 2022/03/01 16:41:38 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@
 # include "Form.hpp"
 # include "ASCII_ART.hpp"
 
-class Form;
+// class Form;
+class Bureaucrat;
 
 class ShrubberyCreationForm : public Form
 {

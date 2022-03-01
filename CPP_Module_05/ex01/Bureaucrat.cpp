@@ -6,11 +6,12 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 22:30:47 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/28 01:09:42 by bahn             ###   ########.fr       */
+/*   Updated: 2022/03/01 16:31:17 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : \
 	_name(name), _grade(grade)

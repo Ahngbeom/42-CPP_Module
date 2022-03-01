@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 22:28:17 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/28 01:54:44 by bahn             ###   ########.fr       */
+/*   Updated: 2022/03/01 15:33:07 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,11 @@ int main()
 		std::cout << "TEST #0 (Copy & Assignment)" << std::endl;
 		PresidentialPardonForm*	origin = new PresidentialPardonForm("Origin");
 		PresidentialPardonForm	copy(*origin);
+		PresidentialPardonForm	assign = copy;
 
-		std::cout << *origin << std::endl;
-		std::cout << copy << std::endl;
+		std::cout << *origin << " (" << origin << ")" << std::endl;
+		std::cout << copy << " (" << &copy << ")" << std::endl;
+		std::cout << assign << " (" << &assign << ")" << std::endl;
 
 		delete origin;
 		std::cout << "======================================================================================" << std::endl;

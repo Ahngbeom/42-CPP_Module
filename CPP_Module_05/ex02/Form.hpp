@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 13:42:50 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/28 18:46:22 by bahn             ###   ########.fr       */
+/*   Updated: 2022/03/01 16:18:54 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <iostream>
 # include <exception>
-# include "Bureaucrat.hpp"
 
 # ifdef	__linux__
 	# define _NOEXCEPT _GLIBCXX_USE_NOEXCEPT

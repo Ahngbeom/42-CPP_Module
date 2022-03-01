@@ -6,11 +6,12 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 12:10:13 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/28 18:43:49 by bahn             ###   ########.fr       */
+/*   Updated: 2022/03/01 16:42:37 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
+#include "Bureaucrat.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm(std::string const & target)
  : Form(target, 72, 45)
@@ -19,7 +20,7 @@ RobotomyRequestForm::RobotomyRequestForm(std::string const & target)
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& form)
- : Form(form.getName(), form.getSignGrade(), form.getExecuteGrade()) 
+ : Form(form) 
 {
 	
 }
@@ -29,7 +30,9 @@ RobotomyRequestForm::~RobotomyRequestForm()
 }
 
 RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& form) {
-	return (*dynamic_cast<RobotomyRequestForm*>(&Form::operator=(form)));
+	if (this != &form)
+		this->Form::operator=(form);
+	return (*this);
 }
 
 void	RobotomyRequestForm::execute(Bureaucrat const & executer) const {

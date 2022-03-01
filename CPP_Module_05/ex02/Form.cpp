@@ -6,11 +6,12 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 22:46:22 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/28 18:46:46 by bahn             ###   ########.fr       */
+/*   Updated: 2022/03/01 16:19:00 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
 Form::Form(const std::string name, const int signGrade, const int executeGrade) 
 	: _name(name), _signed(false), _signGrade(signGrade), _executeGrade(executeGrade)

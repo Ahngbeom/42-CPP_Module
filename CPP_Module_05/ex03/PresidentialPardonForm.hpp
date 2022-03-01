@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 14:18:55 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/28 18:43:59 by bahn             ###   ########.fr       */
+/*   Updated: 2022/03/01 16:42:49 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 
 # include "Form.hpp"
 # include "ASCII_ART.hpp"
+
+class Bureaucrat;
 
 class PresidentialPardonForm : public Form
 {
