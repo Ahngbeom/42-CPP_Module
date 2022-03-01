@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 12:13:02 by bahn              #+#    #+#             */
-/*   Updated: 2022/03/01 21:28:36 by bahn             ###   ########.fr       */
+/*   Updated: 2022/03/01 21:35:33 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	outputCharacter(double& num) {
 	{
 		std::cout << "char: ";
 
-		if (std::isnan(num) \
+		if (std::isnan(num) || std::isinf(num) \
 			|| num < (double)std::numeric_limits<unsigned char>::min() \
 			|| num > (double)std::numeric_limits<unsigned char>::max())
 			throw "impossible";
@@ -45,7 +45,7 @@ void	outputInteger(double& num) {
 	try
 	{
 		std::cout << "int: ";
-		if (std::isnan(num) \
+		if (std::isnan(num) || std::isinf(num) \
 			|| num < std::numeric_limits<int>::min() \
 			|| num > std::numeric_limits<int>::max())		
 			throw "impossible";
