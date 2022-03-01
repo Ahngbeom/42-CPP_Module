@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 12:15:52 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/25 20:14:48 by bahn             ###   ########.fr       */
+/*   Updated: 2022/03/01 17:37:20 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@ private:
 	std::string _error;
 public:
 	InvalidArguments();
+	InvalidArguments(const InvalidArguments& inval);
 	~InvalidArguments() _NOEXCEPT;
+	
+	InvalidArguments&	operator=(const InvalidArguments& inval);
 
 	virtual const char*	what() const _NOEXCEPT;
 };
