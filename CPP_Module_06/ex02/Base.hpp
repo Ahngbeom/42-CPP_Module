@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 20:35:10 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/27 00:10:37 by bahn             ###   ########.fr       */
+/*   Updated: 2022/03/01 17:46:08 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,13 @@ class Base
 	private:
 		const	char	type;
 	public:
-		Base(const char type) : type(type) {};
-		virtual ~Base() {};
+		Base(const char type);
+		Base(const Base& base);
+		virtual ~Base();
+		
+		Base& operator=(const Base& base);
 
-		char	getType() const {
-			return (type);
-		}
+		char	getType() const ;
 };
 
 #endif

@@ -1,49 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ABC.hpp                                            :+:      :+:    :+:   */
+/*   Base.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/20 20:53:00 by bahn              #+#    #+#             */
-/*   Updated: 2022/03/01 17:54:05 by bahn             ###   ########.fr       */
+/*   Created: 2022/03/01 17:45:43 by bahn              #+#    #+#             */
+/*   Updated: 2022/03/01 17:56:48 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#ifndef ABC_HPP
-# define ABC_HPP
+#include "Base.hpp"
 
-# include "Base.hpp"
+Base::Base(const char type) : type(type) {
+	
+}
 
-class A : public Base
-{
-public:
-	A(const char type);
-	A(const A& a);
-	~A();
+Base::Base(const Base& base) : type(base.getType()) {
 
-	A& operator=(const A& a);
-};
+}
 
-class B : public Base
-{
-public:
-	B(const char type);
-	B(const B& a);
-	~B();
+Base::~Base() {
+	
+}
+		
+Base& Base::operator=(const Base& base) {
+	if (this != &base)
+		*const_cast<char*>(&this->type) = base.getType();
+	return (*this);
+}
 
-	B& operator=(const B& a);
-};
-
-class C : public Base
-{
-public:
-	C(const char type);
-	C(const C& a);
-	~C();
-
-	C& operator=(const C& a);
-};
-
-#endif
+char	Base::getType() const {
+	return (type);
+}
