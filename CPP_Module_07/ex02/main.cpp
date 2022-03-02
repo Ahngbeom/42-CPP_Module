@@ -6,115 +6,106 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 12:04:54 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/21 21:41:25 by bahn             ###   ########.fr       */
+/*   Updated: 2022/03/03 00:27:35 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <Array.hpp>
+#include "Array.hpp"
 
-#define MAX_VAL 750
-int main(int, char**)
+template <typename T>
+std::ostream&	operator<<(std::ostream& ostrm, Array<T>& array) {
+	ostrm << "Array {";
+	for (unsigned i = 0; i < array.size(); i++)
+	{
+		ostrm << array[i];
+		if (i != array.size() - 1)
+			ostrm << ", ";
+	}
+	ostrm << "}" << std::endl;
+	return (ostrm);
+}
+
+int main( void )
 {
-    Array<int> numbers(MAX_VAL);
-    int* mirror = new int[MAX_VAL];
-    srand(time(NULL));
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        const int value = rand();
-        numbers[i] = value;
-        mirror[i] = value;
-    }
-    //SCOPE
-
-    /* Checking Array Elements */
-    {
-        std::cout << std::endl << "Array Elements Checking..." << std::endl;
-        {
-            std::cout << "[numbers] " << numbers;
-            std::cout << "[mirror] Array {";
-            for (size_t i = 0; i < MAX_VAL; i++)
-            {
-                if (i == MAX_VAL - 10)
-                    std::cout << std::endl << "..., ";
-                else if (i >= 10 && i < MAX_VAL - 10)
-                    continue;
-                std::cout << mirror[i];
-                if (i != MAX_VAL - 1)
-                    std::cout << ", ";
-            }
-            std::cout << "}" << std::endl;
-        }
-    }
-    /* Checking Array Elements End*/
-
-    {
-        Array<int> tmp = numbers;
-        Array<int> test(tmp);
-
-        /* Checking Array Copy */
-        {
-            std::cout << std::endl << "Array Copy Checking..." << std::endl;
-            {
-                std::cout << "[tmp] " << tmp;
-                std::cout << "[test] Array {";
-                for (size_t i = 0; i < tmp.getSize(); i++)
-                {
-                    if (i == tmp.getSize() - 10)
-                        std::cout << std::endl << "..., ";
-                    else if (i >= 10 && i < tmp.getSize() - 10)
-                        continue;
-                    std::cout << test[i];
-                    if (i != tmp.getSize() - 1)
-                        std::cout << ", ";
-                }
-                std::cout << "}" << std::endl;
-            }
-        }
-        /* Checking Array Copy End*/
-    }
-
+    Array<int>  numbers(10);
+    int*        intArray = new int[10];
     
-
-    for (int i = 0; i < MAX_VAL; i++)
+    std::srand(time(NULL));
+    
+    for (std::size_t i = 0; i < numbers.size(); i++)
     {
-        if (mirror[i] != numbers[i])
+        int value = rand() % 100;
+        numbers[i] = value;
+        intArray[i] = value;
+    }
+
+    {
+        std::cout << std::endl << "[Array Elements Checking]" << std::endl;
+        
+        std::cout << "[numbers] " << numbers;
+        std::cout << "[intArray] Array {";
+        for (std::size_t i = 0; i < numbers.size(); i++) {
+            std::cout << intArray[i];
+            if (i != 10 - 1)
+                std::cout << ", ";
+        }
+        std::cout << "}" << std::endl;
+
+        delete [] intArray;
+    }
+
+    std::cout << std::endl;
+    
+    {
+        std::cout << "[Array Copy & Assignment Checking]" << std::endl;
+        
+        Array<int> copy(numbers);
+        Array<int> assign = copy;
+
+        std::cout << "[copy] " << copy;
+        std::cout << "[assign] " << assign;
+    }
+
+    std::cout << std::endl;
+
+    {
+        std::cout << "[If accessing an element is out of the limits]" << std::endl;
+        try
         {
-            std::cerr << "didn't save the same value!!" << std::endl;
-            return 1;
+            numbers[numbers.size()] = 99999;
+        }
+        catch(const std::exception& e)
+        {
+            std::cerr << e.what() << '\n';
+        }
+
+        try
+        {
+            numbers[-1] = 99999;
+        }
+        catch(const std::exception& e)
+        {
+            std::cerr << e.what() << '\n';
         }
     }
-    try
-    {
-        numbers[-2] = 0;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    try
-    {
-        numbers[MAX_VAL] = 0;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
 
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        numbers[i] = rand();
-    }
+    std::cout << std::endl;
 
-    /* Checking Array Elements */
     {
-        std::cout << std::endl << "Array Elements Checking..." << std::endl;
+        std::cout << "[Array<std::string> TEST]" << std::endl;
+        Array<std::string>  strArr(5);
+
+        strArr[0] = "Always living on the run (always living on the run)";
+        strArr[1] = "Never setting with the sun (never setting with the sun)";
+        strArr[2] = "Our hearts have broken and they've loved (loved, loved, loved)";
+        strArr[3] = "But we're still young (but we're still young)";
+        strArr[4] = "And the best is yet to come";
+
+        for (std::size_t i = 0; i < strArr.size(); i++)
         {
-            std::cout << "[numbers] " << numbers;
+            std::cout << strArr[i] << std::endl;
         }
     }
-    /* Checking Array Elements End*/
 
-    delete [] mirror;//
     return 0;
 }
