@@ -6,13 +6,14 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 12:13:02 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/27 00:11:51 by bahn             ###   ########.fr       */
+/*   Updated: 2022/03/02 23:52:19 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <typeinfo>
 
 #include "ABC.hpp"
 
@@ -40,12 +41,26 @@ void identify(Base* p) {
 }
 
 void identify(Base& p) {
-	if (dynamic_cast<A*>(&p))
+	try
+	{
+		dynamic_cast<A&>(p);
 		std::cout << "A" << std::endl;
-	if (dynamic_cast<B*>(&p))
+	}
+	catch(const std::bad_cast &) {}
+
+	try
+	{
+		dynamic_cast<B&>(p);
 		std::cout << "B" << std::endl;
-	if (dynamic_cast<C*>(&p))
+	}
+	catch(const std::bad_cast &) {}
+
+	try
+	{
+		dynamic_cast<C&>(p);
 		std::cout << "C" << std::endl;
+	}
+	catch(const std::bad_cast &) {}
 }
 
 int main()
