@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/03 16:06:15 by bahn              #+#    #+#             */
+/*   Updated: 2022/03/03 21:44:39 by bahn             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include <Array.hpp>
 
@@ -75,8 +87,15 @@ int main(int, char**)
 			std::cout << "[Array Copy & Assignment Checking]" << std::endl;
 			
 			Array<int> copy(numbers);
-			Array<int> assign = copy;
+			Array<int> assign;
+			assign = copy;
 
+			std::cout << "[copy] " << copy;
+			std::cout << "[assign] " << assign;
+
+			copy[0] = 0;
+			assign[1] = -1;
+			
 			std::cout << "[copy] " << copy;
 			std::cout << "[assign] " << assign;
 		}

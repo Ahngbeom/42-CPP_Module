@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 13:45:23 by bahn              #+#    #+#             */
-/*   Updated: 2022/03/03 15:51:21 by bahn             ###   ########.fr       */
+/*   Updated: 2022/03/03 22:21:10 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ private:
 public:
 	Array();
 	Array(unsigned int size);
-	Array(Array<T> const & array);
+	Array(const Array<T>& array);
 	~Array();
 
-	Array<T>&	operator=(Array<T> const & other);
+	Array<T>&	operator=(const Array<T>& other);
 
 	T&	operator[](int index);
 	T&	operator[](int index) const;
@@ -53,8 +53,8 @@ public:
 
 
 template <typename T>
-Array<T>::Array() : _array(new T), _size(0) {
-	
+Array<T>::Array() : _array(new T[0]), _size(0) {
+	// std::cout << "Default" << std::endl;
 }
 
 template <typename T>
@@ -63,7 +63,8 @@ Array<T>::Array(unsigned int size) : _array(new T[size]), _size(size) {
 };
 
 template <typename T>
-Array<T>::Array(Array<T> const & array) {
+Array<T>::Array(const Array<T>& array) {
+	// std::cout << "Copy" << std::endl;
 	_size = array.size();
 	_array = new T[_size];
 	for (unsigned int i = 0; i < _size; i++)
@@ -72,15 +73,15 @@ Array<T>::Array(Array<T> const & array) {
 	}
 }
 
-
 template <typename T>
-Array<T>::~Array() { 
-	delete [] _array;
+Array<T>::~Array() {
+	if (_size != 0)
+		delete [] _array;
 };
 
 template <typename T>
-Array<T>&	Array<T>::operator=(Array<T> const & other) {
-	std::cout << other.size() << std::endl;
+Array<T>&	Array<T>::operator=(const Array<T>& other) {
+	// std::cout << "Assignment" << std::endl;
 	if (this != &other) {
 		delete [] _array;
 		_size = other.size();
