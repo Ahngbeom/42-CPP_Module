@@ -6,7 +6,7 @@
 #    By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/19 12:10:42 by bahn              #+#    #+#              #
-#    Updated: 2022/02/20 21:36:02 by bahn             ###   ########.fr        #
+#    Updated: 2022/03/03 15:41:29 by bahn             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,10 +32,10 @@ $(NAME) : $(OBJS)
 	$(CXX) $(CXXFLAGS) $(INCFLAGS) $^ -o $@
 
 clean : 
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(D_OBJS)
 
 fclean : clean
-	$(RM) $(NAME)
+	$(RM) $(NAME) $(DETAIL)
 
 re : fclean all
 

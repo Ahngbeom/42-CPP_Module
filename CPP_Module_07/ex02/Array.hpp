@@ -6,17 +6,20 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 13:45:23 by bahn              #+#    #+#             */
-/*   Updated: 2022/03/02 22:01:31 by bahn             ###   ########.fr       */
+/*   Updated: 2022/03/03 15:51:21 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ARRAY_HPP
 # define ARRAY_HPP
 
-# include <iostream>
 # include <cstdlib>
 # include <ctime>
 # include <cstring>
+
+# ifdef	__linux__
+	# define _NOEXCEPT _GLIBCXX_USE_NOEXCEPT
+# endif
 
 template <typename T>
 class Array
@@ -27,20 +30,30 @@ private:
 public:
 	Array();
 	Array(unsigned int size);
-	Array(Array<T> const& array);
+	Array(Array<T> const & array);
 	~Array();
 
 	Array<T>&	operator=(Array<T> const & other);
 
 	T&	operator[](int index);
-	T const&	operator[](int index) const;
+	T&	operator[](int index) const;
 
 	unsigned int	size( void ) const;
+
+	class IndexOutOfBounds : public std::exception
+	{
+	private:
+		std::string	msg;
+	public:
+		IndexOutOfBounds();
+		~IndexOutOfBounds() _NOEXCEPT;
+		virtual const char* what() const _NOEXCEPT;
+	};
 };
 
 
 template <typename T>
-Array<T>::Array() : _array(new T[0]), _size(0) {
+Array<T>::Array() : _array(new T), _size(0) {
 	
 }
 
@@ -50,7 +63,7 @@ Array<T>::Array(unsigned int size) : _array(new T[size]), _size(size) {
 };
 
 template <typename T>
-Array<T>::Array(Array<T> const& array) {
+Array<T>::Array(Array<T> const & array) {
 	_size = array.size();
 	_array = new T[_size];
 	for (unsigned int i = 0; i < _size; i++)
@@ -81,22 +94,58 @@ Array<T>&	Array<T>::operator=(Array<T> const & other) {
 }
 
 template <typename T>
-T const&	Array<T>::operator[](int index) const {
+T&	Array<T>::operator[](int index) {
 	if (index < 0 || static_cast<unsigned int>(index) >= _size)
-		throw std::exception();
+		throw IndexOutOfBounds();
 	return (_array[index]);
 };
 
 template <typename T>
-T&	Array<T>::operator[](int index) {
+T&	Array<T>::operator[](int index) const {
 	if (index < 0 || static_cast<unsigned int>(index) >= _size)
-		throw std::exception();
+		throw IndexOutOfBounds();
 	return (_array[index]);
 };
 
 template <typename T>
 unsigned int	Array<T>::size( void ) const {
 	return (_size);
+}
+
+template <typename T>
+Array<T>::IndexOutOfBounds::IndexOutOfBounds()
+{
+	msg = "Index out of bounds.";
+}
+
+template <typename T>	
+Array<T>::IndexOutOfBounds::~IndexOutOfBounds() _NOEXCEPT
+{
+}
+
+template <typename T>
+const char* Array<T>::IndexOutOfBounds::what() const _NOEXCEPT
+{
+	return (msg.c_str());
+}
+
+template <typename T>
+std::ostream&	operator<<(std::ostream& ostrm, Array<T>& array) {
+	ostrm << "Array {";
+	for (unsigned i = 0; i < array.size(); i++)
+	{
+		if (i < 5 || i >= array.size() - 5)
+			ostrm << array[i];
+		else
+			continue;
+		if (i != array.size() - 1)
+			ostrm << ", ";
+		if (i == 4) {
+			ostrm << ". . . . . ";
+		}
+	}
+	ostrm << "}" << std::endl;
+	return (ostrm);
 }
 
 #endif
