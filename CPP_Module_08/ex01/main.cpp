@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 23:23:19 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/22 15:46:11 by bahn             ###   ########.fr       */
+/*   Updated: 2022/03/05 02:58:49 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,20 +22,69 @@ int main()
 	sp.addNumber(9);
 	sp.addNumber(11);
 
-	sp.printElements();
-
 	std::cout << sp.shortestSpan() << std::endl;
-	sp.printElements();
 	std::cout << sp.longestSpan() << std::endl;
-	sp.printElements();
+	
+	std::cout << std::endl;
 
 	{
+		// Deep copy TEST
+		std::vector<int> v(5, 5);
+		std::vector<int> cp(v);
+		// std::vector<int> cp = v;
+
+		cp.insert(cp.begin(), 0);
+
+		std::cout << "[ ";
+		for (size_t i = 0; i < v.size(); i++)
+		{
+			std::cout << v.at(i) << " ";
+		}
+		std::cout << "]\n[ ";
+		for (size_t i = 0; i < v.size(); i++)
+		{
+			std::cout << cp.at(i) << " ";
+		}
+		std::cout << "]" << std::endl;
+	}
+
+	std::cout << std::endl;
+	
+	{
+		// Try inserting out of vector range.
+		sp.addNumber(100);
+	}
+	
+	std::cout << std::endl;
+
+	{
+		// If vector is empty or ones
+		Span	empty(0);
+
+		empty.shortestSpan();
+		empty.longestSpan();
+
+		Span	one(1);
+
+		one.addNumber(42);
+
+		one.shortestSpan();
+		one.longestSpan();
+	}
+
+	std::cout << std::endl;
+
+	{
+		// Size 10000 vector
 		Span	sp10000 = Span(10000);
+		std::vector<int> raw;
 		for (int i = -5000; i < 5000; i++)
 		{
-			sp10000.addNumber(i);
+			raw.push_back(i);
 		}
 
+		sp10000.insertNumber(raw.begin(), raw.end());
+		
 		std::cout << sp10000.shortestSpan() << std::endl;
 		std::cout << sp10000.longestSpan() << std::endl;
 	}
