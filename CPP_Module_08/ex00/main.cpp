@@ -6,11 +6,12 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 23:23:19 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/22 14:22:46 by bahn             ###   ########.fr       */
+/*   Updated: 2022/03/04 14:18:28 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "easyfind.hpp"
+# include <vector>
 
 int main()
 {
@@ -21,26 +22,12 @@ int main()
 		vec.push_back(i);
 	}
 
-	std::cout << "Begin: " << *(vec.begin()) << std::endl;
-	std::cout << "End: " << *(vec.end() - 1) << std::endl;
-
-	{
-		std::vector<int>::iterator found = ::easyfind(vec, 7);
-		if(found == vec.end())
-			std::cout << "Not found elements." << std::endl;
-		else {
-			std::cout << "Elements found: " << *found << std::endl;
-		}
-	}
-	
-	{
-		std::vector<int>::iterator found = ::easyfind(vec, 99);
-		if(found == vec.end())
-			std::cout << "Not found elements." << std::endl;
-		else {
-			std::cout << "Elements found: " << *found << std::endl;
-		}
-	}
+	::easyfind(vec, 0);
+	::easyfind(vec, 1);
+	::easyfind(vec, 5);
+	::easyfind(vec, 7);
+	::easyfind(vec, 10);
+	::easyfind(vec, 100);
 
 	return 0;
 }
