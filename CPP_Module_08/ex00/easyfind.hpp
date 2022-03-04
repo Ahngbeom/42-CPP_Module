@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 23:04:29 by bahn              #+#    #+#             */
-/*   Updated: 2022/03/04 14:27:09 by bahn             ###   ########.fr       */
+/*   Updated: 2022/03/04 14:42:34 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,6 @@ NotFound::~NotFound() _NOEXCEPT {
 const char* NotFound::what() const _NOEXCEPT {
 	return (msg.c_str());
 }
-
-class NotFound;
 
 template <typename T>
 void	easyfind(T& t, int find) {

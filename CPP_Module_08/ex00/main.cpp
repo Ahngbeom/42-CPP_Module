@@ -6,12 +6,12 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 23:23:19 by bahn              #+#    #+#             */
-/*   Updated: 2022/03/04 14:18:28 by bahn             ###   ########.fr       */
+/*   Updated: 2022/03/04 14:53:16 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "easyfind.hpp"
-# include <vector>
+#include <vector>
 
 int main()
 {
