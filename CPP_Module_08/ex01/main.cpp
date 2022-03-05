@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 23:23:19 by bahn              #+#    #+#             */
-/*   Updated: 2022/03/05 02:58:49 by bahn             ###   ########.fr       */
+/*   Updated: 2022/03/05 16:40:42 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,27 @@ int main()
 		// Deep copy TEST
 		std::vector<int> v(5, 5);
 		std::vector<int> cp(v);
-		// std::vector<int> cp = v;
+		std::vector<int> assign;
 
-		cp.insert(cp.begin(), 0);
+		assign = cp;
 
-		std::cout << "[ ";
+		cp.at(0) = 0;
+		assign.at(4) = 0;
+		
+		std::cout << "v [ ";
 		for (size_t i = 0; i < v.size(); i++)
 		{
 			std::cout << v.at(i) << " ";
 		}
-		std::cout << "]\n[ ";
-		for (size_t i = 0; i < v.size(); i++)
+		std::cout << "]\ncopy [ ";
+		for (size_t i = 0; i < cp.size(); i++)
 		{
 			std::cout << cp.at(i) << " ";
+		}
+		std::cout << "]\nassign [ ";
+		for (size_t i = 0; i < assign.size(); i++)
+		{
+			std::cout << assign.at(i) << " ";
 		}
 		std::cout << "]" << std::endl;
 	}

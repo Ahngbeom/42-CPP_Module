@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 14:31:23 by bahn              #+#    #+#             */
-/*   Updated: 2022/03/05 02:17:18 by bahn             ###   ########.fr       */
+/*   Updated: 2022/03/05 16:32:32 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@
 class Span
 {
 public:
-	typedef typename std::vector<int> intVector_t;
-	typedef typename std::vector<int>::iterator intVector_iter;
+	typedef std::vector<int> intVector_t;
+	typedef std::vector<int>::iterator intVector_iter;
 
 	Span(unsigned int N);
 	Span(const Span& span);
