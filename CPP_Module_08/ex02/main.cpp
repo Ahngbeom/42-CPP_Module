@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 23:23:19 by bahn              #+#    #+#             */
-/*   Updated: 2022/03/05 14:03:57 by bahn             ###   ########.fr       */
+/*   Updated: 2022/03/05 16:09:10 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,39 @@ int main()
 	std::stack<int>	s(mstack);
 	
 	std::cout << "Stack Top: " << mstack.top() << std::endl;
+
+	std::cout << std::endl;
+
+	{
+		/* Copy & Assignment TEST */
+		MutantStack<int>	cp(mstack);
+		MutantStack<int>	assign;
+		
+		cp.push(999);
+		assign = cp;
+		assign.pop();
+		
+		it = mstack.begin();
+		std::cout << "mstack [ ";
+		while (it != ite)
+			std::cout << *(it++) << " ";
+		std::cout << "]" << std::endl;
+
+		it = cp.begin();
+		ite = cp.end();
+		std::cout << "cp [ ";
+		while (it != ite)
+			std::cout << *(it++) << " ";
+		std::cout << "]" << std::endl;
+
+		it = assign.begin();
+		ite = assign.end();
+		std::cout << "assign [ ";
+		while (it != ite)
+			std::cout << *(it++) << " ";
+		std::cout << "]" << std::endl;
+	}
+
 
 	return 0;
 }

@@ -6,7 +6,7 @@
 #    By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/19 12:10:42 by bahn              #+#    #+#              #
-#    Updated: 2022/02/22 16:08:51 by bahn             ###   ########.fr        #
+#    Updated: 2022/03/05 15:20:48 by bahn             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,7 @@ INCFLAGS = -I.
 RM = rm -rf
 
 SRCS_DIR = ./
-SRCS_FILE = main.cpp \
-			mutantstack.cpp
+SRCS_FILE = main.cpp
 SRCS = $(addprefix $(SRCS_DIR), $(SRCS_FILE))
 OBJS = $(SRCS:.cpp=.o)
 
