@@ -6,11 +6,10 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 15:57:04 by bahn              #+#    #+#             */
-/*   Updated: 2022/03/05 14:39:54 by bahn             ###   ########.fr       */
+/*   Updated: 2022/03/05 14:42:35 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
 #ifndef MUTANT_STACK_HPP
 # define MUTANT_STACK_HPP
 
