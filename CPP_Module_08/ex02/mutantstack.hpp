@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 15:57:04 by bahn              #+#    #+#             */
-/*   Updated: 2022/02/22 17:04:40 by bahn             ###   ########.fr       */
+/*   Updated: 2022/03/05 14:39:54 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 # include <iostream>
 # include <stack>
+# include <list>
 
 template <typename T>
 class MutantStack : public std::stack<T>
@@ -30,19 +31,10 @@ public:
 	MutantStack<T>& operator=(const MutantStack<T>& other);
 
 	typedef typename std::stack<T>::container_type::iterator	iterator;
-	typedef typename std::stack<T>::container_type::const_iterator	const_iterator;
-	typedef typename std::stack<T>::container_type::reverse_iterator	reverse_iterator;
-	typedef typename std::stack<T>::container_type::const_reverse_iterator	const_reverse_iterator;
 	
-	
-	iterator	begin( void ) {
-		return (this->c.begin());	
-	}
+	iterator	begin( void );
 
-	iterator	end( void ) {
-		return (this->c.end());	
-	}
-	
+	iterator	end( void );
 };
 
 template <typename T>
@@ -67,6 +59,14 @@ MutantStack<T> &MutantStack<T>::operator=(const MutantStack<T> &other) {
 	return *this;
 }
 
+template <typename T>
+typename MutantStack<T>::iterator	MutantStack<T>::begin( void ) {
+	return (this->c.begin());	
+}
 
+template <typename T>
+typename MutantStack<T>::iterator	MutantStack<T>::end( void ) {
+	return (this->c.end());	
+}
 
 #endif
